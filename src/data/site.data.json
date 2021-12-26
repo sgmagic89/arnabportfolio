@@ -1,0 +1,107 @@
+{
+    "profile": {
+        "firstName": "Arnab",
+        "lastName": "De",
+        "phone": "+91 9874666610",
+        "address": {
+            "street": "N‑69, Connaught Place",
+            "state": "Delhi",
+            "country": "India"
+        },
+        "email": "arnab.in@gmail.com",
+        "dob": "11 November, 1979",
+        "skills": ["Designer", "Illustrator", "Concept Artist"],
+        "totalExp": 22,
+        "introduction": "I'm a digital artist with a passion for Gaming, Animation and Visual Arts. I enjoy developing the concepts, artwork and layouts for digital projects based on creative briefs that provide real value to the end user. Thousands of clients have procured exceptional results while working with me. Delivering work within time and budget which meets client’s requirements is my moto."
+    },
+    "whatIdo": {
+
+    },
+    "resume": {
+        "education": [],
+        "experience": []
+    },
+    "myWork": {
+
+    },
+    "testimonials": {
+
+    },
+    "gallery": {
+            "Category A": {
+                "folder": "Category A",
+                "images": [
+                    {
+                        "name": "Artemis",
+                        "url": "artemis.jpg"
+                    },
+                    {
+                        "name": "Beckoning",
+                        "url": "beckoning.jpg"
+                    },
+                    {
+                        "name": "Goddess of War",
+                        "url": "goddess-of-war.jpg"
+                    },
+                    {
+                        "name": "Hunter",
+                        "url": "hunter.jpg"
+                    },
+                    {
+                        "name": "Punisher",
+                        "url": "punisher.jpg"
+                    },
+                    {
+                        "name": "Sherlock at Baker Street",
+                        "url": "sherlock.jpg"
+                    }
+                ]
+            },
+            "Category B": {
+            "folder": "Category B",
+            "images": [
+                {
+                    "name": "Apollo Landscape",
+                    "url": "apollo-landscape.jpg"
+                },
+                {
+                    "name": "Dkj Primary Screen",
+                    "url": "dkj-primaryscreen.jpg"
+                },
+                {
+                    "name": "Glistening Jade Jackpots",
+                    "url": "glistening-jade-jackpots.jpg"
+                },
+                {
+                    "name": "SR Landscape",
+                    "url": "landscape-sr.jpg"
+                },
+                {
+                    "name": "MN Landscape",
+                    "url": "mn-landscape.jpg"
+                },
+                {
+                    "name": "Zeus Landscape",
+                    "url": "zeus-landscape.jpg"
+                } 
+            ]
+        },
+        "Category C": {
+            "folder": "Category C",
+            "images": [
+                {
+                    "name": "Eart Safari Storm Inferno",
+                    "url": "eart-safari-storm-inferno.jpg"
+                },
+                {
+                    "name": "Eart Untamedriches",
+                    "url": "eart-untamedriches.jpg"
+                }
+            ]
+        },
+        "Category D": {
+            "folder": "Category D",
+            "images": []
+        }
+    }
+}

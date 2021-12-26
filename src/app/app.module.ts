@@ -13,7 +13,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ServicesComponent } from './components/services/services.component';
 import { TestimonialComponent } from './components/testimonial/testimonial.component';
-import { PhotoGalleryModule } from '@twogate/ngx-photo-gallery'
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,12 +33,7 @@ import { PhotoGalleryModule } from '@twogate/ngx-photo-gallery'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PhotoGalleryModule.forRoot({
-      defaultOptions: {
-        arrowEl: true,
-        indexIndicatorSep: '-'
-      }
-    })
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

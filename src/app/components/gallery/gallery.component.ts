@@ -13,19 +13,15 @@ export class GalleryComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    ($('.banner') as any).ripples({
-      resolution: 750,
-      dropRadius: 20,
-      perturbance: 0.04,
-    });
-    setInterval(function() {
-      const $el: any = $('.banner');
-      const x = Math.random() * $el.outerWidth();
-      const y = Math.random() * $el.outerHeight();
-      const dropRadius = 25;
-      const strength = 0.04 + Math.random() * 0.04;
-      $el.ripples('drop', x, y, dropRadius, strength);
-    }, 200);
+    
+    // setInterval(function() {
+    //   const $el: any = $('.banner');
+    //   const x = Math.random() * $el.outerWidth();
+    //   const y = Math.random() * $el.outerHeight();
+    //   const dropRadius = 25;
+    //   const strength = 0.04 + Math.random() * 0.04;
+    //   $el.ripples('drop', x, y, dropRadius, strength);
+    // }, 200);
     this.dataService.getCategories().forEach(category => {
       this.dataService.getPaths(category).forEach(path => {
         this.images.push(path);
@@ -34,13 +30,25 @@ export class GalleryComponent implements OnInit {
     
     console.log(this.background)
     this.background = '/assets/images/gallery/Collages/collage1.jpg';
-      // setInterval(() => {
-      //   if(this.index === this.images.length-1) {
-      //     this.index = 0;
-      //   }
-      //   this.background = this.images[this.index].path;
-      //   this.index++;
-      // },5000); 
+    setTimeout(() => {
+      // ($('.banner')as any).ripples('show');
+      setInterval(function() {
+      const $el: any = $('.banner');
+      const x = Math.random() * $el.outerWidth();
+      const y = Math.random() * $el.outerHeight();
+      const dropRadius = 25;
+      const strength = 0.04 + Math.random() * 0.04;
+      $el.ripples('drop', x, y, dropRadius, strength);
+    }, 200);
+    }, 2000)
+    // ($('.banner') as any).ripples('show');
+    //   setInterval(() => {
+    //     if(this.index === this.images.length-1) {
+    //       this.index = 0;
+    //     }
+    //     this.background = this.images[this.index].path;
+    //     this.index++;
+    //   },5000); 
   }
 
 }

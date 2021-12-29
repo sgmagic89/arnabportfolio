@@ -25,7 +25,7 @@ export class GalleryComponent implements OnInit {
       const dropRadius = 25;
       const strength = 0.04 + Math.random() * 0.04;
       $el.ripples('drop', x, y, dropRadius, strength);
-    }, 100);
+    }, 200);
     this.dataService.getCategories().forEach(category => {
       this.dataService.getPaths(category).forEach(path => {
         this.images.push(path);

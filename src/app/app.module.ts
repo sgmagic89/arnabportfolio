@@ -14,6 +14,9 @@ import { ResumeComponent } from './components/resume/resume.component';
 import { ServicesComponent } from './components/services/services.component';
 import { TestimonialComponent } from './components/testimonial/testimonial.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,12 +31,19 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
     PortfolioComponent,
     ResumeComponent,
     ServicesComponent,
-    TestimonialComponent
+    TestimonialComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

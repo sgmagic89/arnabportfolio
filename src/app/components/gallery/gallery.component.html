@@ -1,14 +1,13 @@
-<div class="gallery" [photoGalleryGroup]="{ arrowEl: true, indexIndicatorSep: ' - ' }">
-  <div class="gallery-item">
-    <div class="gallery-item-name">{{ product1.name }}</div>
-    <div class="gallery-item-image" [photoGallery]="product1.image.originUrl">
-      <img [src]="product1.image.thumbnailUrl" />
-    </div>
-  </div>
-  <div class="gallery-item">
-    <div class="gallery-item-name">{{ product2.name }}</div>
-    <div class="gallery-item-image" [photoGallery]="product2.image.originUrl">
-      <img [src]="product2.image.thumbnailUrl" />
-    </div>
-  </div>
+<!-- <carousel
+    [images]="images"
+    [arrowsOutside]="false"
+    [autoplay]="true"
+    [dots]="true"
+    [loop]="true"
+    [height]=600
+    >
+</carousel> -->
+
+<div class="banner" [ngStyle]="{'background-image': 'url(&quot;' + background + '&quot;)'}">
+
 </div>

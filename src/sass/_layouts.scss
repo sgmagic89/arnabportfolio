@@ -47,7 +47,8 @@
   line-height: 32px;
   font-size: 20px;
   text-align: center;
-  color: #fff;
+  color: $primary-color !important;
+  z-index: 9999999;
   .animated {
     position: relative;
 	animation: fadeInDown 1.5s infinite;

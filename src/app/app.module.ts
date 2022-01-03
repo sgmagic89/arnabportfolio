@@ -17,6 +17,7 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { environment } from '../environments/environment';
     ResumeComponent,
     ServicesComponent,
     TestimonialComponent,
-    GalleryComponent
+    GalleryComponent,
+    ImageViewerComponent
   ],
   imports: [
     BrowserModule,

@@ -32,28 +32,25 @@
                 "folder": "Category A",
                 "images": [
                     {
-                        "name": "Artemis",
-                        "url": "artemis.jpg"
+                        "name": "Atlantis_Queen"
                     },
                     {
-                        "name": "Beckoning",
-                        "url": "beckoning.jpg"
+                        "name": "Goddesd-of-Death"
                     },
                     {
-                        "name": "Goddess of War",
-                        "url": "goddess-of-war.jpg"
+                        "name": "Medusa"
                     },
                     {
-                        "name": "Hunter",
-                        "url": "hunter.jpg"
+                        "name": "Sherlock"
                     },
                     {
-                        "name": "Punisher",
-                        "url": "punisher.jpg"
+                        "name": "Apollo"
                     },
                     {
-                        "name": "Sherlock at Baker Street",
-                        "url": "sherlock.jpg"
+                        "name": "Punisher"
+                    },
+                    {
+                        "name": "Hunter"
                     }
                 ]
             },

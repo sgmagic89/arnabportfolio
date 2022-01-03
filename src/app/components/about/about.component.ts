@@ -7,7 +7,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-
+  cat = "Category A";
   constructor(public dataService: DataService) { }
 
   ngOnInit() {

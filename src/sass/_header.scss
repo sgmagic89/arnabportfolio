@@ -6,6 +6,9 @@
   @include transition(all .5s ease);
   .navbar {
     padding: 0px;
+    z-index: 9999999;
+    opacity: 0.8;
+    height: 85px !important;
   }
   .logo {
     -webkit-box-align: center;
@@ -16,7 +19,7 @@
     display: flex;
     -ms-flex-item-align: stretch;
     align-self: center;
-    height: 55px;
+    height: 80px;
   }
 }
 
@@ -46,7 +49,7 @@
   -ms-flex-item-align: stretch;
   align-self: stretch;
   background: #fff;
-  border-bottom:1px solid #efefef;
+  // border-bottom:1px solid #efefef;
   &.bg-transparent {
     position: absolute;
     z-index: 999;
@@ -96,7 +99,7 @@
     > a:not(.btn) {
       height: 70px;
       padding:0px 0.85em;
-      color: #252b33;
+      color: #B3B3B3;
 	  @include transition(all .2s ease);
       position: relative;
 	  position:relative;
@@ -104,6 +107,7 @@
 	
     &:hover > a:not(.btn), & > a.active:not(.btn) {
 	  @include transition(all .2s ease);
+    color: $primary-color;
     }
 	a.btn{padding: 0.4rem 1.4rem;}
     &.dropdown {
@@ -282,7 +286,7 @@
 }
 
 
-.sticky-on.bg-transparent:not(.navbar-text-light), .sticky-top .sticky-on-top.bg-transparent:not(.navbar-text-light){background-color:$primary-color !important; opacity: 0.8; border-bottom:1px solid $primary-color!important;}
+.sticky-on.bg-transparent:not(.navbar-text-light), .sticky-top .sticky-on-top.bg-transparent:not(.navbar-text-light){background-color:black !important;}
 .sticky-on.navbar-text-light.bg-transparent, .sticky-top .sticky-on-top.navbar-text-light.bg-transparent{background-color:#111 !important; @include box-shadow(0px 0px 10px rgba(250, 250, 250, 0.03)); border-bottom:none!important;}
 
 /* Hamburger Menu Button */
@@ -300,9 +304,9 @@
   span {
     display: block;
     position: absolute;
-    height: 2px;
+    height: 3px;
     width: 100%;
-    background: #3c3636;
+    background: rgb(255, 132, 0);
     opacity: 1;
     left: 0;
 	@include rotate(0deg);

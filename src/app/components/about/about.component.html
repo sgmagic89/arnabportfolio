@@ -7,17 +7,18 @@
     
     <div class="row">
       <div class="col-lg-8 text-center text-lg-start wow fadeInUp">
-        <h2 class="text-8 fw-400 mb-3">Hi, I'm <span class="fw-700 border-bottom border-3 border-primary">{{dataService.profile.firstName}} {{dataService.profile.lastName}}</span></h2>
-        <p class="text-5">{{dataService.profile.introduction}}</p>
+        <!-- <h2 class="text-8 fw-400 mb-3">Hi, I'm <span class="fw-700 border-bottom border-3 border-primary">{{dataService.profile.firstName}} {{dataService.profile.lastName}}</span></h2>
+        <p class="text-5">{{dataService.profile.introduction}}</p> -->
+        <app-image-viewer [category]="cat"></app-image-viewer>
       </div>
-      <div class="col-lg-4 mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="0.2s">
+      <!-- <div class="col-lg-4 mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="0.2s">
         <div class="featured-box style-4">
           <div class="featured-box-icon text-25 fw-500 bg-primary rounded-circle"><span class="wow heartBeat" data-wow-delay="1.3s">{{dataService.profile.totalExp}}</span></div>
           <h3 class="text-7 wow rubberBand" data-wow-delay="2s">Years of <span class="fw-700">Experience</span></h3>
         </div>
-      </div>
+      </div> -->
     </div>
-    <div class="row gy-3 mt-4">
+    <!-- <div class="row gy-3 mt-4">
       <div class="col-6 col-lg-3 wow fadeInUp">
         <p class="text-muted fw-500 mb-0">Name:</p>
         <p class="text-4 text-dark fw-600 mb-0">{{dataService.profile.firstName}} {{dataService.profile.lastName}}</p>
@@ -34,6 +35,6 @@
         <p class="text-muted fw-500 mb-0">From:</p>
         <p class="text-4 text-dark fw-600 mb-0">{{dataService.profile.address.state}}, {{dataService.profile.address.country}}.</p>
       </div>
-    </div>
+    </div> -->
   </div>
 </section>

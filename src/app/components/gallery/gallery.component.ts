@@ -26,10 +26,12 @@ onResize(even?: any) {
         this.images.push(path);
       })
     });
-    
     setTimeout(() => {
+    this.headerCarousel.next();
+    },500);
+    setInterval(() => {
       this.headerCarousel.next();
-    },500)
+    },5000)
   }
 
 }

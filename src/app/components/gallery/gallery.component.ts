@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class GalleryComponent implements OnInit {
  background: any;
  index = 0;
  screenHeight = 0;
+ @ViewChild('headerCarousel', {static: false}) headerCarousel: any;
  @HostListener('window:resize', ['$event'])
 onResize(even?: any) {
    this.screenHeight = window.innerHeight + 85;
@@ -26,6 +27,9 @@ onResize(even?: any) {
       })
     });
     
+    setTimeout(() => {
+      this.headerCarousel.next();
+    },500)
   }
 
 }

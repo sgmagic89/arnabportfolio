@@ -10,6 +10,9 @@
 
 ::ng-deep .carousel-cell {
     clip-path: polygon(0 0, 65% 0, 100% 100%, 35% 100%);
+    img {
+        object-position: 0px -45px;
+    }
 }  
 
 @media (max-width: 500px) {
@@ -17,44 +20,3 @@
         margin-left: -100px;
     } 
 }
-
-// @-webkit-keyframes loader {
-//     from {
-//       background-position: 0;
-//     }
-//     to {
-//       background-position: -1000px 0;
-//     }
-//   }
-//   @-moz-keyframes loader {
-//     from {
-//       background-position: 0;
-//     }
-//     to {
-//       background-position: -1600px 0;
-//     }
-//   }
-//   @-ms-keyframes loader {
-//     from {
-//       background-position: 0;
-//     }
-//     to {
-//       background-position: -1600px 0;
-//     }
-//   }
-//   @-o-keyframes loader {
-//     from {
-//       background-position: 0;
-//     }
-//     to {
-//       background-position: -1600px 0;
-//     }
-//   }
-//   @keyframes loader {
-//     from {
-//       background-position: 0;
-//     }
-//     to {
-//       background-position: -5000px;
-//     }
-//   }

@@ -28,34 +28,32 @@
 
     },
     "gallery": {
-            "Category A": {
-                "folder": "Category A",
-                "images": [
-                    {
-                        "name": "Atlantis_Queen"
-                    },
-                    {
-                        "name": "Goddess-of-war"
-                    },
-                    {
-                        "name": "Medusa"
-                    },
-                    {
-                        "name": "Sherlock"
-                    },
-                    {
-                        "name": "Apollo"
-                    },
-                    {
-                        "name": "Punisher"
-                    },
-                    {
-                        "name": "Hunter"
-                    }
-                ]
-            },
-            "Category B": {
-            "folder": "Category B",
+        "home": {
+            "images": [
+                {
+                    "name": "Atlantis_Queen.jpg"
+                },
+                {
+                    "name": "Goddess-of-war.jpg"
+                },
+                {
+                    "name": "Medusa.jpg"
+                },
+                {
+                    "name": "Sherlock.jpg"
+                },
+                {
+                    "name": "Apollo.jpg"
+                },
+                {
+                    "name": "Punisher.jpg"
+                },
+                {
+                    "name": "Hunter.jpg"
+                }
+            ]
+        },
+        "illustrations": {
             "images": [
                 {
                     "name": "Apollo Landscape",
@@ -84,7 +82,6 @@
             ]
         },
         "Category C": {
-            "folder": "Category C",
             "images": [
                 {
                     "name": "Eart Safari Storm Inferno",
@@ -97,7 +94,6 @@
             ]
         },
         "Category D": {
-            "folder": "Category D",
             "images": []
         }
     }

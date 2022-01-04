@@ -8,16 +8,16 @@ profile = data.profile;
 gallery: any = data.gallery;
 constructor() { }
 
-getCategories() {
-  return Object.keys(data.gallery);
-}
-
-getPaths(category: string) {
+getHomeImages() {
   const paths: any[] = [];
-  this.gallery[category].images.forEach((image: any) => {
-    paths.push({path: '/assets/images/gallery/'+ this.gallery[category].folder + '/' + image.name + '.jpg'})
+  this.gallery['home'].images.forEach((image: any) => {
+    paths.push({path: '/assets/images/gallery/'+ 'home' + '/' + image.name })
   });
   return paths;
+}
+
+getIllustrations() {
+
 }
 
 }

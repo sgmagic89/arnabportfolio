@@ -20,11 +20,8 @@ onResize(even?: any) {
 
   ngOnInit() {
     this.screenHeight = window.innerHeight - 25;
-    this.dataService.getCategories().forEach(category => {
-      if(category === 'Category A')
-      this.dataService.getPaths(category).forEach(path => {
-        this.images.push(path);
-      })
+    this.dataService.getHomeImages().forEach(path => {
+      this.images.push(path);
     });
     setTimeout(() => {
     this.headerCarousel.next();

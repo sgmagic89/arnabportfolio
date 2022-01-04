@@ -7,7 +7,7 @@
   .navbar {
     padding: 0px;
     z-index: 9999999;
-    height: 85px !important;
+    height: 85px;
     box-shadow: 0 5px 12px 5px #000000d1;
   }
   .logo {
@@ -45,7 +45,7 @@
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
-  height: auto !important;
+  height: auto;
   -webkit-box-ordinal-group: 0;
   -ms-flex-item-align: stretch;
   align-self: stretch;
@@ -58,7 +58,6 @@
     left: 0;
     width: 100%;
     box-shadow: none;
-	border-bottom: 1px solid rgba(250, 250, 250, 0.3);
   }
    &.sticky-on{
 	position: fixed;
@@ -472,6 +471,18 @@ ul.navbar-nav {
 	.navbar-expand-sm{
 		@include navbar-responsive;
 	}
+
+  .navbar {
+    height: 64px !important
+  }
+  .logo {
+    .name {
+      font-size: 28px !important;
+    }
+    .role {
+      font-size: 12px !important;
+    }
+  }
 }
 
 @include media-breakpoint-down(md) {

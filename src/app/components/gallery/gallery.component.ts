@@ -8,18 +8,18 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class GalleryComponent implements OnInit {
  images: any[] = [];
- background: any;
+ background = "assets/images/gallery/Category A/banner.png";
  index = 0;
  screenHeight = 0;
  @ViewChild('headerCarousel', {static: false}) headerCarousel: any;
  @HostListener('window:resize', ['$event'])
 onResize(even?: any) {
-   this.screenHeight = window.innerHeight + 85;
+   this.screenHeight = window.innerHeight + 55;
 }
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.screenHeight = window.innerHeight + 85;
+    this.screenHeight = window.innerHeight + 55;
     this.dataService.getCategories().forEach(category => {
       if(category === 'Category A')
       this.dataService.getPaths(category).forEach(path => {

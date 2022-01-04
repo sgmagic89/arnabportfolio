@@ -15,7 +15,7 @@ getCategories() {
 getPaths(category: string) {
   const paths: any[] = [];
   this.gallery[category].images.forEach((image: any) => {
-    paths.push({path: '/assets/images/gallery/'+ this.gallery[category].folder + '/' + image.name + '.png'})
+    paths.push({path: '/assets/images/gallery/'+ this.gallery[category].folder + '/' + image.name + '.jpg'})
   });
   return paths;
 }

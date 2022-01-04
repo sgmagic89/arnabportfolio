@@ -14,12 +14,12 @@ export class GalleryComponent implements OnInit {
  @ViewChild('headerCarousel', {static: false}) headerCarousel: any;
  @HostListener('window:resize', ['$event'])
 onResize(even?: any) {
-   this.screenHeight = window.innerHeight + 55;
+   this.screenHeight = window.innerHeight - 25;
 }
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.screenHeight = window.innerHeight + 55;
+    this.screenHeight = window.innerHeight - 25;
     this.dataService.getCategories().forEach(category => {
       if(category === 'Category A')
       this.dataService.getPaths(category).forEach(path => {

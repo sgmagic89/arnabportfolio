@@ -30,12 +30,15 @@
     .inline-gallery-container {
         width: 60%;
         height: 90vh;
-        z-index: 9999;
     }
 }
 
 ::ng-deep .lg-outer .lg-thumb-item img  {
  object-fit: contain !important;
+}
+
+::ng-deep .lg-toolbar .lg-icon {
+margin-top: 10px;
 }
 @media (max-width: 1000px) {
     .description {

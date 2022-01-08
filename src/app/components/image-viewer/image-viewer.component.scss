@@ -24,13 +24,21 @@
             flex-direction: column;
             align-items: center;
             animation: move 10s infinite;
-            color: white;
+            color: #ff8400;
         }
     }
     .inline-gallery-container {
         width: 60%;
         height: 90vh;
     }
+}
+
+::ng-deep .lg-outer .lg-thumb-item.active {
+    border-color: #ff8400 !important;
+}
+
+::ng-deep  .lg-outer .lg-thumb-item:hover {
+    border-color: #ff8400 !important;
 }
 
 ::ng-deep .lg-outer .lg-thumb-item img  {

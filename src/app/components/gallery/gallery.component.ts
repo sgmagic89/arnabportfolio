@@ -14,12 +14,12 @@ export class GalleryComponent implements OnInit {
  @ViewChild('headerCarousel', {static: false}) headerCarousel: any;
  @HostListener('window:resize', ['$event'])
 onResize(even?: any) {
-   this.screenHeight = window.innerHeight - 25;
+   this.screenHeight = window.innerHeight - 15;
 }
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.screenHeight = window.innerHeight - 25;
+    this.screenHeight = window.innerHeight - 15;
     this.dataService.getHomeImages().forEach(path => {
       this.images.push(path);
     });

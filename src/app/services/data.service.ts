@@ -17,7 +17,11 @@ getHomeImages() {
 }
 
 getIllustrations() {
-
+  const paths: any[] = [];
+  this.gallery['illustrations'].images.forEach((image: any) => {
+    paths.push({path: '/assets/images/gallery/'+ 'illustrations' + '/' + image.name })
+  });
+  return paths;
 }
 
 }

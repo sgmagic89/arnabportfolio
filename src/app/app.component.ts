@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
       this.router.events.subscribe((event) => {
         if (event instanceof NavigationEnd) {
-          if (!event.url.includes('home')) {
+          if (!event.url.includes('home') && event.url !== "/") {
             document.getElementById('nav')?.classList.remove('show');
             document.getElementById('nav')?.classList.add('hide');
           if(window.innerWidth > 1000)

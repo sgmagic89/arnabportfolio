@@ -18,6 +18,10 @@
     border-color: #ff8400 !important;
 }
 
+::ng-deep  .lg-outer .lg-thumb-item {
+    border-color: transparent !important;
+}
+
 ::ng-deep .lg-outer .lg-thumb-item img  {
  object-fit: contain !important;
 }

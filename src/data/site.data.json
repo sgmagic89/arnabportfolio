@@ -29,34 +29,34 @@
     "illustrations": {
         "images": [
             {
-                "name": "Mayan-King_C&I.jpg"
+                "name": "Apollo_C&I.jpg"
+            },
+            {
+                "name": "Medusa-beckoning_C&I.jpg"
+            },
+            {
+                "name": "Sherlock-at-baker-street_C&I.jpg"
             },
             {
                 "name": "Artemis_C&I.jpg"
             },
             {
-                "name": "Apollo_C&I.jpg"
+                "name": "Punisher_C&I.jpg"
             },
             {
                 "name": "Atlantis_Queen_C&I.jpg"
+            },
+            {
+                "name": "Mayan-King_C&I.jpg"
+            },
+            {
+                "name": "Goddess-of-war_C&I.jpg"
             },
             {
                 "name": "Hunter_C&I.jpg"
             },
             {
                 "name": "Colonial_Sisters_C&I.JPG"
-            },
-            {
-                "name": "Punisher_C&I.jpg"
-            },
-            {
-                "name": "Goddess-of-war_C&I.jpg"
-            },
-            {
-                "name": "Sherlock-at-baker-street_C&I.jpg"
-            },
-            {
-                "name": "Medusa-beckoning_C&I.jpg"
             }
         ]
     },

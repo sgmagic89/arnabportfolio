@@ -1,0 +1,25 @@
+.menu {
+    cursor: pointer;
+    mat-icon {
+    z-index: 999999;
+    color: #B3B3B3;
+    font-size: 2rem;
+    position: fixed;
+    top: 27px;
+    right: 20px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .menu {
+        mat-icon {
+            top: 6px;
+        }
+    }
+}

@@ -1,106 +1,83 @@
 {
-    "profile": {
-        "firstName": "Arnab",
-        "lastName": "De",
-        "phone": "+91 9874666610",
-        "address": {
-            "street": "N‑69, Connaught Place",
-            "state": "Delhi",
-            "country": "India"
-        },
-        "email": "arnab.in@gmail.com",
-        "dob": "11 November, 1979",
-        "skills": ["Designer", "Illustrator", "Concept Artist"],
-        "totalExp": 22,
-        "introduction": "I'm a digital artist with a passion for Gaming, Animation and Visual Arts. I enjoy developing the concepts, artwork and layouts for digital projects based on creative briefs that provide real value to the end user. Thousands of clients have procured exceptional results while working with me. Delivering work within time and budget which meets client’s requirements is my moto."
+    "name": "ARNAB DE",
+    "role": "Game Art & Animation Director",
+    "home": {
+        "images": [
+            {
+                "name": "Atlantis_Queen.jpg"
+            },
+            {
+                "name": "Apollo.jpg"
+            },
+            {
+                "name": "Goddess-of-war.jpg"
+            },
+            {
+                "name": "Hunter.jpg"
+            },
+            {
+                "name": "Medusa.jpg"
+            },
+            {
+                "name": "Sherlock.jpg"
+            },
+            {
+                "name": "Punisher.jpg"
+            }
+        ]
     },
-    "whatIdo": {
+    "illustrations": {
+        "images": [
+            {
+                "name": "Mayan-King_C&I.jpg"
+            },
+            {
+                "name": "Artemis_C&I.jpg"
+            },
+            {
+                "name": "Apollo_C&I.jpg"
+            },
+            {
+                "name": "Atlantis_Queen_C&I.jpg"
+            },
+            {
+                "name": "Hunter_C&I.jpg"
+            },
+            {
+                "name": "Colonial_Sisters_C&I.JPG"
+            },
+            {
+                "name": "Punisher_C&I.jpg"
+            },
+            {
+                "name": "Goddess-of-war_C&I.jpg"
+            },
+            {
+                "name": "Sherlock-at-baker-street_C&I.jpg"
+            },
+            {
+                "name": "Medusa-beckoning_C&I.jpg"
+            }
+        ]
+    },
+    "gamearts": {
+        "images": [
 
+        ]
     },
-    "resume": {
-        "education": [],
-        "experience": []
+    "animations": {
+         "images": [
+            
+        ]
     },
-    "myWork": {
-
+    "miscellaneous": {
+        "images": [
+            
+        ]
     },
-    "testimonials": {
-
-    },
-    "gallery": {
-        "home": {
-            "images": [
-                {
-                    "name": "Atlantis_Queen.jpg"
-                },
-                {
-                    "name": "Apollo.jpg"
-                },
-                {
-                    "name": "Goddess-of-war.jpg"
-                },
-                {
-                    "name": "Hunter.jpg"
-                },
-                {
-                    "name": "Medusa.jpg"
-                },
-                {
-                    "name": "Sherlock.jpg"
-                },
-                {
-                    "name": "Punisher.jpg"
-                }
-            ]
-        },
-        "illustrations": {
-            "images": [
-                {
-                    "name": "Mayan-King_C&I.jpg"
-                },
-                {
-                    "name": "Artemis_C&I.jpg"
-                },
-                {
-                    "name": "Apollo_C&I.jpg"
-                },
-                {
-                    "name": "Atlantis_Queen_C&I.jpg"
-                },
-                {
-                    "name": "Hunter_C&I.jpg"
-                },
-                {
-                    "name": "Colonial_Sisters_C&I.JPG"
-                },
-                {
-                    "name": "Punisher_C&I.jpg"
-                },
-                {
-                    "name": "Goddess-of-war_C&I.jpg"
-                },
-                {
-                    "name": "Sherlock-at-baker-street_C&I.jpg"
-                },
-                {
-                    "name": "Medusa-beckoning_C&I.jpg"
-                }
-            ]
-        },
-        "Category C": {
-            "images": [
-                {
-                    "name": "Eart Safari Storm Inferno",
-                    "url": "eart-safari-storm-inferno.jpg"
-                },
-                {
-                    "name": "Eart Untamedriches",
-                    "url": "eart-untamedriches.jpg"
-                }
-            ]
-        },
-        "Category D": {
-            "images": []
-        }
+    "about": {
+        "images": [
+            
+        ]
     }
 }

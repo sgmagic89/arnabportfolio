@@ -1,0 +1,115 @@
+.nav-items {
+    padding-right: 20px;
+    color: #B3B3B3;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: 35px;
+    top: 20px;
+    width: 75%;
+    z-index: 999999;
+    justify-content: flex-end;
+    ul {
+        display: flex;
+        list-style-type: none;
+        li {
+            margin-left: 32px;
+            font-weight: 500;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        li:hover {
+            color: rgb(255, 132, 0);
+        }
+        li.active {
+            color: rgb(255, 132, 0);
+        }
+        li.active:after {
+            content: '';
+            display: block;
+            margin-top: 5px;
+            height: 3px;
+            width: 100%;
+            background: rgb(255, 132, 0);
+            transition: width .5s ease, background-color .5s ease;
+        }
+        li:after {
+            content: '';
+            display: block;
+            margin-top: 5px;
+            height: 3px;
+            width: 0px;
+            background: transparent;
+            transition: width .5s ease, background-color .5s ease;
+        }
+        li:hover:after{
+            width: 100%;
+            background: rgb(255, 132, 0);
+        }
+    }
+}
+
+.menu-items {
+    width: 100%;
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    color: white;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    ul {
+        height: 70vh;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0px;
+        li {
+            font-size: 1.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 45px;
+        }
+        li:hover {
+            color: rgb(255, 132, 0);
+        }
+        li.active {
+            color: rgb(255, 132, 0);
+        }
+        li.active:after {
+            content: '';
+            display: block;
+            margin-top: 5px;
+            height: 3px;
+            width: 100%;
+            background: rgb(255, 132, 0);
+            transition: width .5s ease, background-color .5s ease;
+        }
+        li:after {
+            content: '';
+            display: block;
+            margin-top: 5px;
+            height: 3px;
+            width: 0px;
+            background: transparent;
+            transition: width .5s ease, background-color .5s ease;
+        }
+        li:hover:after{
+            width: 100%;
+            background: rgb(255, 132, 0);
+        }
+    }
+}
+
+.show {
+    display: flex;
+}
+
+.hide {
+    display: none;
+}

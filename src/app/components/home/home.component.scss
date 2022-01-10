@@ -1,0 +1,12 @@
+::ng-deep .carousel-cell {
+    clip-path: polygon(0 0, 65% 0, 100% 100%, 35% 100%);
+    img {
+        object-position: 0px -45px;
+    }
+}  
+
+@media (max-width: 500px) {
+    ::ng-deep .carousel-cell {
+        margin-left: -100px;
+    } 
+}

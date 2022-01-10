@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-about',
@@ -7,8 +6,8 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  cat = "Category A";
-  constructor(public dataService: DataService) { }
+
+  constructor() { }
 
   ngOnInit() {
   }

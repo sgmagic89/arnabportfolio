@@ -1,53 +1,42 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './components/about/about.component';
-import { ContactMeComponent } from './components/contact-me/contact-me.component';
-import { FaqComponent } from './components/faq/faq.component';
+import { HomeComponent } from './components/home/home.component';
+import { IllustrationsComponent } from './components/illustrations/illustrations.component';
+import { NavComponent } from './components/nav/nav.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared/shared.module';
 import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
-import { HireMeComponent } from './components/hire-me/hire-me.component';
-import { IntroComponent } from './components/intro/intro.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { ResumeComponent } from './components/resume/resume.component';
-import { ServicesComponent } from './components/services/services.component';
-import { TestimonialComponent } from './components/testimonial/testimonial.component';
-import {IvyCarouselModule} from 'angular-responsive-carousel';
-import { GalleryComponent } from './components/gallery/gallery.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
-import { LightgalleryModule } from 'lightgallery/angular';
+import { HamburgerComponent } from './components/nav/hamburger/hamburger.component';
+import { GameArtComponent } from './components/game-art/game-art.component';
+import { AnimationsComponent } from './components/animations/animations.component';
+import { MiscellaneousComponent } from './components/miscellaneous/miscellaneous.component';
+import { AboutComponent } from './components/about/about.component';
+import { NavItemsComponent } from './components/nav/nav-items/nav-items.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    IntroComponent,
-    AboutComponent,
-    ContactMeComponent,
-    FaqComponent,
+    NavComponent,
+    HamburgerComponent,
+    NavItemsComponent,
     FooterComponent,
-    HireMeComponent,
-    PortfolioComponent,
-    ResumeComponent,
-    ServicesComponent,
-    TestimonialComponent,
-    GalleryComponent,
-    ImageViewerComponent
+    HomeComponent,
+    IllustrationsComponent,
+    GameArtComponent,
+    AnimationsComponent,
+    MiscellaneousComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    IvyCarouselModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
-    LightgalleryModule
+    BrowserAnimationsModule,
+    SharedModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

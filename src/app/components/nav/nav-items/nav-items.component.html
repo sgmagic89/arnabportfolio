@@ -1,0 +1,10 @@
+<div id="nav-items" [ngClass]="{'nav-items': nav, 'menu-items': !nav}">
+  <ul>
+      <li [routerLink]="['/home']" [routerLinkActive]="['active']" class="nav-item">HOME</li>
+      <li [routerLink]="['/illustrations']" [routerLinkActive]="['active']" class="nav-item">CONCEPT ART / ILLUSTRATIONS</li>
+      <li [routerLink]="['/gameart']" [routerLinkActive]="['active']" class="nav-item">GAME ART</li>
+      <li [routerLink]="['/animations']" [routerLinkActive]="['active']" class="nav-item">ANIMATIONS</li>
+      <li [routerLink]="['/miscellaneous']" [routerLinkActive]="['active']" class="nav-item">MISCELLANEOUS</li>
+      <li [routerLink]="['/about']" [routerLinkActive]="['active']" class="nav-item">ABOUT</li>
+  </ul>
+</div>

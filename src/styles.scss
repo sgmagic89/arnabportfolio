@@ -1,27 +1,13 @@
-@import "sass/bootstrap/functions";
-@import "sass/bootstrap/variables";
-@import "sass/bootstrap/mixins";
-@import "sass/bootstrap/vendor/rfs";
-
-
-// Initialize
-@import "sass/variables";
-@import "sass/mixins";
-
-
-// Core CSS
-@import "sass/reset";
-@import "sass/helpers";
-@import "sass/layouts";
-
-
-// Content Blocks
-@import "sass/header";
-@import "sass/elements";
-@import "sass/footer";
-@import "sass/extras";
-
-
+/* You can add global styles to this file, and also import other style files */
 @import '~lightgallery/scss/lightgallery';
 @import '~lightgallery/scss/lg-zoom';
 @import '~lightgallery/scss/lg-thumbnail';
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

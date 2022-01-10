@@ -12,12 +12,12 @@ export class HomeComponent implements OnInit {
   @ViewChild('headerCarousel', {static: false}) headerCarousel: any;
   @HostListener('window:resize', ['$event'])
  onResize(even?: any) {
-    this.screenHeight = window.innerHeight - 15;
+    this.screenHeight = window.innerHeight;
  }
    constructor(private dataService: DataService) { }
  
    ngOnInit() {
-     this.screenHeight = window.innerHeight - 15;
+     this.screenHeight = window.innerHeight;
      this.dataService.getHomeImages().forEach(path => {
        this.images.push(path);
      });

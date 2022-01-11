@@ -8,7 +8,7 @@ export const slideInOutAnimationHome =
         // end state styles for route container (host)
         state('*', style({
             // the view covers the whole screen with a semi tranparent background
-            position: 'fixed',
+            position: 'relative',
             top: 0,
             right: 0,
             bottom: 0,
@@ -32,7 +32,6 @@ export const slideInOutAnimationHome =
             animate('2s ease-in-out', style({
                 // transition the right position to 0 which slides the content into view
                 right: 0,
-
                 // transition the background opacity to 0.8 to fade it in
                 backgroundColor: 'rgba(0, 0, 0, 0.8)'
             }))

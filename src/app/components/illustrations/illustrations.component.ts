@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import lightGallery from 'lightgallery';
 import { DataService } from 'src/app/services/data.service';
 import lgZoom from 'lightgallery/plugins/zoom';
@@ -12,7 +12,7 @@ import { slideInOutAnimationOther } from 'src/app/animations/slide-in-out.animat
   animations: [slideInOutAnimationOther],
   host: { '[@slideInOutAnimationOther]': '' }
 })
-export class IllustrationsComponent implements AfterViewInit {
+export class IllustrationsComponent implements AfterViewInit, OnDestroy {
   constructor(private dataService: DataService) {
   }
 
@@ -54,8 +54,17 @@ const inlineGallery = lightGallery(lgContainer, {
 // Since we are using dynamic mode, we need to programmatically open lightGallery
 setTimeout(() => {
   inlineGallery.openGallery();
-}, 200);
-  }
+    }, 200);
 
+setTimeout(() => {
+  document.getElementsByTagName('app-illustrations')[0].classList.add('rel');
+}, 3000);
+
+
+}
+
+ngOnDestroy(): void {
+  document.getElementsByTagName('app-illustrations')[0].classList.remove('rel');
+ }
 
 }

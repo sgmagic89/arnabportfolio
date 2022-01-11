@@ -11,12 +11,6 @@ html, body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-app-illustrations {
-    overflow: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
-app-illustrations::-webkit-scrollbar {
-        display: none;
+.rel {
+    position: relative !important;
 }

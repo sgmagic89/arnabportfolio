@@ -7,7 +7,7 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [slideInOutAnimationHome],
-  host: { '[@slideInOutAnimation]': '' }
+  host: { '[@slideInOutAnimationHome]': '' }
 })
 export class HomeComponent implements OnInit {
   images: any[] = [];

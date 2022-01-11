@@ -1,13 +1,16 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import lightGallery from 'lightgallery';
 import { DataService } from 'src/app/services/data.service';
 import lgZoom from 'lightgallery/plugins/zoom';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import { slideInOutAnimationOther } from 'src/app/animations/slide-in-out.animation';
 
 @Component({
   selector: 'app-illustrations',
   templateUrl: './illustrations.component.html',
-  styleUrls: ['./illustrations.component.scss']
+  styleUrls: ['./illustrations.component.scss'],
+  animations: [slideInOutAnimationOther],
+  host: { '[@slideInOutAnimationOther]': '' }
 })
 export class IllustrationsComponent implements AfterViewInit {
   constructor(private dataService: DataService) {

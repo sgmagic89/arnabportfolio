@@ -71,22 +71,39 @@
             ]
         },
         "game2": {
-            "name": "Butterfly 2",
+            "name": "Butterfly STAXX 2",
             "images": [
-                { "name": "landscape-sr.jpg" },
-                { "name": "landscape-tr.jpg" },
-                { "name": "portrait-tr.jpg" },
+                { "name": "Landscape view with single reel set.png" },
+                { "name": "Landscape view with three reel sets.png" },
+                { "name": "Portrait view with three reel sets.png" },
                 { "name": "https://www.youtube.com/embed/Qw5MdW6yXmw" }
             ]
         },
         "game3": {
             "name": "Amazing Link Zeus",
             "images": [
-                { "name": "amazing-link-zeus-landscape.jpg" },
-                { "name": "amazing-link-zeus-portrait.jpg" },
-                { "name": "zeus-concept-lineart.jpg" },
-                { "name": "zeus-full-size.jpg" },
+                { "name": "Amazing Link Zeus_Landscape.jpg" },
+                { "name": "Amazing Link Zeus_Portrait.jpg" },
+                { "name": "Zeus_Concept_LineArt.jpg" },
+                { "name": "Zeus_Full-Size.jpg" },
                 { "name": "https://www.youtube.com/embed/MKQaA2RrXrk" }
+            ]
+        },
+        "game4": {
+            "name": "Atlantis Rising",
+            "images": [
+                { "name": "Atlantis Rising Landscape view.jpg" },
+                { "name": "Atlantis character symbols.jpg" },
+                { "name": "Atlantis Rising portrait view.jpg" },
+                { "name": "https://www.youtube.com/embed/HNBfIgj72zA" }
+            ]
+        },
+        "game5": {
+            "name": "Diamond King Jackpots",
+            "images": [
+                { "name": "Diamond King Jackpots free game screen.jpg" },
+                { "name": "Diamond King Jackpots primary game screen.jpg" },
+                { "name": "https://www.youtube.com/embed/M-syTf5ygkA" }
             ]
         }
     },

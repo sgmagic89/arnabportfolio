@@ -45,8 +45,8 @@
         img {
             width: -webkit-fill-available;
             margin-bottom: 30px;
-            height: 100vh;
             object-fit: contain;
+            max-height: 100vh;
         }
     }
 }

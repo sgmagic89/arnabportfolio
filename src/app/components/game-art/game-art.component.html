@@ -9,7 +9,7 @@
       <a *ngIf="!game.name.includes('http')" href="{{game.path}}" target="_blank">
         <img src="{{game.path}}" />
       </a>
-      <iframe *ngIf="game.name.includes('http')" class="video" [src]="game.name | safe">
+      <iframe *ngIf="game.name.includes('http')" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen [src]="game.name | safe">
       </iframe>
     </ng-container>
   </div>

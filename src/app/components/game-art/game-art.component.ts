@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { slideInOutAnimationOther } from 'src/app/animations/slide-in-out.animation';
 import { DataService } from 'src/app/services/data.service';
+import { PasswordComponent } from './password/password.component';
 
 @Component({
   selector: 'app-game-art',
@@ -9,24 +11,29 @@ import { DataService } from 'src/app/services/data.service';
   animations: [slideInOutAnimationOther],
   host: { '[@slideInOutAnimationOther]': '' }
 })
-export class GameArtComponent implements OnInit {
+export class GameArtComponent implements OnInit, OnDestroy {
   data: any;
   keys: string[];
   index = 0;
   total: number;
-  current: any
-  constructor(private dataService: DataService) {
+  current: any;
+  dialogRef!:MatDialogRef<PasswordComponent>;
+  constructor(private dataService: DataService, public dialog: MatDialog) {
     this.data = this.dataService.getGameArts();
     this.keys = Object.keys(this.data);
     this.total = this.keys.length;
    }
 
   ngOnInit() {
-    this.setCurrent();
-    setTimeout(() => {
-      document.getElementsByTagName('app-game-art')[0].classList.add('rel');
-    }, 2000);
-    
+    this.dialogRef = this.dialog.open(PasswordComponent);
+    this.dialogRef.afterClosed().subscribe((result: boolean) => {
+      if(result) {
+        this.setCurrent();
+        setTimeout(() => {
+          document.getElementsByTagName('app-game-art')[0].classList.add('rel');
+        }, 2000);
+      }
+    })    
   }
 
   setCurrent() {
@@ -57,6 +64,7 @@ export class GameArtComponent implements OnInit {
 
   ngOnDestroy(): void {
     document.getElementsByTagName('app-game-art')[0].classList.remove('rel');
-   }
+    this.dialogRef.close();
+  }
 
 }

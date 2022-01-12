@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { slideInOutAnimationOther } from 'src/app/animations/slide-in-out.animation';
 import { DataService } from 'src/app/services/data.service';
@@ -18,6 +18,11 @@ export class GameArtComponent implements OnInit, OnDestroy {
   total: number;
   current: any;
   dialogRef!:MatDialogRef<PasswordComponent>;
+  showScrollHelper = true;
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: any) {
+    this.showScrollHelper = false;
+  }
   constructor(private dataService: DataService, public dialog: MatDialog) {
     this.data = this.dataService.getGameArts();
     this.keys = Object.keys(this.data);
@@ -31,7 +36,7 @@ export class GameArtComponent implements OnInit, OnDestroy {
         this.setCurrent();
         setTimeout(() => {
           document.getElementsByTagName('app-game-art')[0].classList.add('rel');
-        }, 2000);
+        }, 500);
       }
     })    
   }
@@ -51,6 +56,7 @@ export class GameArtComponent implements OnInit, OnDestroy {
       ++this.index;
     }
     this.setCurrent();
+    this.showScrollHelper = true;
   }
 
   prev() {
@@ -60,6 +66,7 @@ export class GameArtComponent implements OnInit, OnDestroy {
       --this.index;
     }
     this.setCurrent();
+    this.showScrollHelper = true;
   }
 
   ngOnDestroy(): void {

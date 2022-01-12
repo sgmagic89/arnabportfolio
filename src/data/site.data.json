@@ -66,7 +66,8 @@
             "images": [
                 { "name": "amazing-link-apollo-landscape.jpg" },
                 { "name": "amazing-link-apollo-portrait.jpg" },
-                { "name": "apollo-full-size.jpg" }
+                { "name": "apollo-full-size.jpg" },
+                { "name": "https://www.youtube.com/embed/4QUHAjCx9bU" }
             ]
         },
         "game2": {
@@ -74,7 +75,8 @@
             "images": [
                 { "name": "landscape-sr.jpg" },
                 { "name": "landscape-tr.jpg" },
-                { "name": "portrait-tr.jpg" }
+                { "name": "portrait-tr.jpg" },
+                { "name": "https://www.youtube.com/embed/Qw5MdW6yXmw" }
             ]
         },
         "game3": {
@@ -83,7 +85,8 @@
                 { "name": "amazing-link-zeus-landscape.jpg" },
                 { "name": "amazing-link-zeus-portrait.jpg" },
                 { "name": "zeus-concept-lineart.jpg" },
-                { "name": "zeus-full-size.jpg" }
+                { "name": "zeus-full-size.jpg" },
+                { "name": "https://www.youtube.com/embed/MKQaA2RrXrk" }
             ]
         }
     },
@@ -102,5 +105,5 @@
             
         ]
     },
-    "password": "test_123"
+    "password": "test"
 }

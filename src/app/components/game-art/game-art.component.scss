@@ -75,3 +75,34 @@
         top: 20px !important;
     }
 }
+
+.video {
+    height: 80vh;
+    width: 80%;
+    margin-bottom: 25px;
+}
+
+.down-sign {
+    position: fixed;
+    right: 2%;
+    bottom: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    mat-icon {
+        font-size: x-large;
+    }
+    animation: down 3s linear infinite;
+}
+
+
+@keyframes down {
+    0% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+
+    }
+}

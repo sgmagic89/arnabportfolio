@@ -6,9 +6,16 @@
   </div>
   <div class="content">
     <ng-container *ngFor="let game of current?.images">
-      <a href="{{game.path}}" target="_blank">
+      <a *ngIf="!game.name.includes('http')" href="{{game.path}}" target="_blank">
         <img src="{{game.path}}" />
       </a>
+      <iframe *ngIf="game.name.includes('http')" class="video" [src]="game.name | safe">
+      </iframe>
     </ng-container>
   </div>
+</div>
+
+<div class="down-sign" *ngIf="showScrollHelper">
+  <span>Scroll Down for more</span>
+  <mat-icon>arrow_downward</mat-icon>
 </div>

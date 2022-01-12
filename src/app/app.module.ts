@@ -17,6 +17,7 @@ import { AboutComponent } from './components/about/about.component';
 import { NavItemsComponent } from './components/nav/nav-items/nav-items.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { PasswordComponent } from './components/game-art/password/password.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PasswordComponent } from './components/game-art/password/password.compo
     AnimationsComponent,
     MiscellaneousComponent,
     AboutComponent,
-    PasswordComponent
+    PasswordComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

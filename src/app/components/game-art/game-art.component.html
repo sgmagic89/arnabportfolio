@@ -1,3 +1,14 @@
-<p>
-  game-art works!
-</p>
+<div class="games">
+  <div class="header">
+    <mat-icon class="left" (click)="next()">keyboard_arrow_left</mat-icon>
+    <span class="name">{{current.name}}</span>
+    <mat-icon class="right" (click)="prev()">keyboard_arrow_right</mat-icon>
+  </div>
+  <div class="content">
+    <ng-container *ngFor="let game of current.images">
+      <a href="{{game.path}}" target="_blank">
+        <img src="{{game.path}}" />
+      </a>
+    </ng-container>
+  </div>
+</div>

@@ -61,9 +61,31 @@
         ]
     },
     "gamearts": {
-        "images": [
-
-        ]
+        "game1": {
+            "name": "Amazing Link Apollo",
+            "images": [
+                { "name": "amazing-link-apollo-landscape.jpg" },
+                { "name": "amazing-link-apollo-portrait.jpg" },
+                { "name": "apollo-full-size.jpg" }
+            ]
+        },
+        "game2": {
+            "name": "Butterfly 2",
+            "images": [
+                { "name": "landscape-sr.jpg" },
+                { "name": "landscape-tr.jpg" },
+                { "name": "portrait-tr.jpg" }
+            ]
+        },
+        "game3": {
+            "name": "Amazing Link Zeus",
+            "images": [
+                { "name": "amazing-link-zeus-landscape.jpg" },
+                { "name": "amazing-link-zeus-portrait.jpg" },
+                { "name": "zeus-concept-lineart.jpg" },
+                { "name": "zeus-full-size.jpg" }
+            ]
+        }
     },
     "animations": {
          "images": [

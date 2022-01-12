@@ -27,4 +27,8 @@ getIllustrations() {
   return paths;
 }
 
+getGameArts() {
+  return this.siteData['gamearts'];
+}
+
 }

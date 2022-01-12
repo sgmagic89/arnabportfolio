@@ -1,0 +1,71 @@
+.games {
+    display: flex;
+    flex-direction: column;
+    .header {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        top: 0;
+        justify-content: space-around;
+        height: 70px;
+        align-items: center;
+        background: black;
+        .name {
+            font-size: 20px;
+            color: white;
+            margin: 20px 0px;
+        }    
+        mat-icon {
+            height: 45px;
+            width: 45px;
+            font-size: 50px;
+            color: white;
+        }
+        .left {
+            cursor: pointer;
+        }
+        .right {
+            cursor: pointer;
+            margin-right: 20px;
+        }
+    }
+
+    .content {
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        img {
+            width: -webkit-fill-available;
+            margin-bottom: 30px;
+            height: 100vh;
+            object-fit: contain;
+        }
+    }
+}
+
+.controls {
+    position: fixed;
+    color: white;
+    top: 50%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    mat-icon {
+        font-size: 50px;
+    }
+    .left {
+        cursor: pointer;
+    }
+    .right {
+        cursor: pointer;
+        margin-right: 20px;
+    }
+}
+
+::ng-deep .menu {
+    mat-icon {
+        top: 20px !important;
+    }
+}

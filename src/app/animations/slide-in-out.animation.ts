@@ -71,7 +71,7 @@ export const slideInOutAnimationHome =
             style({
                 // start with the content positioned off the right of the screen, 
                 // -400% is required instead of -100% because the negative position adds to the width of the element
-                right: '-400%',
+                transform: 'translateX(400%)',
                 // start with background opacity set to 0 (invisible)
                 backgroundColor: 'rgba(0, 0, 0, 0)'
             }),
@@ -79,7 +79,7 @@ export const slideInOutAnimationHome =
             // animation and styles at end of transition
             animate('2s ease-in-out', style({
                 // transition the right position to 0 which slides the content into view
-                right: 0,
+                transform: 'translateX(0)',
                 // transition the background opacity to 0.8 to fade it in
                 backgroundColor: 'rgba(0, 0, 0, 0.8)'
             }))

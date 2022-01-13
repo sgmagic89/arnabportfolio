@@ -1,6 +1,6 @@
-import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { fadeAnimation, slideAnimation } from 'src/app/animations/animations';
 import { DataService } from 'src/app/services/data.service';
 import { PasswordComponent } from './password/password.component';
 
@@ -9,18 +9,9 @@ import { PasswordComponent } from './password/password.component';
   templateUrl: './game-art.component.html',
   styleUrls: ['./game-art.component.scss'],
   animations: [
-                trigger('fade', [
-                state('false', style({ opacity: 0 })),
-                state('true', style({ opacity: 1 })),
-                transition('false => true', animate('500ms ease-in-out'))
-              ]),
-              trigger('slide', [
-                state('false', style({ transform: 'translateX(-100%)' })),
-                state('true', style({ transform: 'translateX(0%)' })),
-                transition('false => true', animate('1000ms ease-in-out'))
-              ])
-  ],
-  host: { '[@slideInOutAnimationOther]': '' }
+    slideAnimation,
+    fadeAnimation
+  ]
 })
 export class GameArtComponent implements OnInit, OnDestroy {
   data: any;

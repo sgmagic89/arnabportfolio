@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
-import { slideInOutAnimation } from 'src/app/animations/slide-in-out.animation';
+import { slideInOutAnimation } from 'src/app/animations/animations';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({

@@ -3,7 +3,7 @@ import lightGallery from 'lightgallery';
 import { DataService } from 'src/app/services/data.service';
 import lgZoom from 'lightgallery/plugins/zoom';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
-import { slideInOutAnimation } from 'src/app/animations/slide-in-out.animation';
+import { slideInOutAnimation } from 'src/app/animations/animations';
 
 @Component({
   selector: 'app-illustrations',

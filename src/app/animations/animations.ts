@@ -49,3 +49,15 @@ import { trigger, state, animate, transition, style } from '@angular/animations'
             }))
         ])
     ]);
+
+    export const fadeAnimation = trigger('fade', [
+        state('false', style({ opacity: 0 })),
+        state('true', style({ opacity: 1 })),
+        transition('false => true', animate('500ms ease-in-out'))
+      ])
+
+    export const slideAnimation = trigger('slide', [
+        state('false', style({ transform: 'translateX(-100%)' })),
+        state('true', style({ transform: 'translateX(0%)' })),
+        transition('false => true', animate('1000ms ease-in-out'))
+      ])

@@ -1,7 +1,6 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { slideInOutAnimationOther } from 'src/app/animations/slide-in-out.animation';
 import { DataService } from 'src/app/services/data.service';
 import { PasswordComponent } from './password/password.component';
 
@@ -9,7 +8,7 @@ import { PasswordComponent } from './password/password.component';
   selector: 'app-game-art',
   templateUrl: './game-art.component.html',
   styleUrls: ['./game-art.component.scss'],
-  animations: [slideInOutAnimationOther, 
+  animations: [
                 trigger('fade', [
                 state('false', style({ opacity: 0 })),
                 state('true', style({ opacity: 1 })),

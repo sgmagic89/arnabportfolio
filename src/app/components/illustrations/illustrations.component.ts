@@ -12,7 +12,7 @@ import { slideInOutAnimationOther } from 'src/app/animations/slide-in-out.animat
   animations: [slideInOutAnimationOther],
   host: { '[@slideInOutAnimationOther]': '' }
 })
-export class IllustrationsComponent implements AfterViewInit, OnDestroy {
+export class IllustrationsComponent implements AfterViewInit {
   constructor(private dataService: DataService) {
   }
 
@@ -55,16 +55,6 @@ const inlineGallery = lightGallery(lgContainer, {
 setTimeout(() => {
   inlineGallery.openGallery();
     }, 200);
-
-setTimeout(() => {
-  document.getElementsByTagName('app-illustrations')[0].classList.add('rel');
-}, 3000);
-
-
 }
-
-ngOnDestroy(): void {
-  document.getElementsByTagName('app-illustrations')[0].classList.remove('rel');
- }
 
 }

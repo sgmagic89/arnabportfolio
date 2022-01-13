@@ -1,3 +1,4 @@
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { slideInOutAnimationOther } from 'src/app/animations/slide-in-out.animation';
@@ -8,7 +9,18 @@ import { PasswordComponent } from './password/password.component';
   selector: 'app-game-art',
   templateUrl: './game-art.component.html',
   styleUrls: ['./game-art.component.scss'],
-  animations: [slideInOutAnimationOther],
+  animations: [slideInOutAnimationOther, 
+                trigger('fade', [
+                state('false', style({ opacity: 0 })),
+                state('true', style({ opacity: 1 })),
+                transition('false => true', animate('500ms ease-in-out'))
+              ]),
+              trigger('slide', [
+                state('false', style({ transform: 'translateX(-100%)' })),
+                state('true', style({ transform: 'translateX(0%)' })),
+                transition('false => true', animate('1000ms ease-in-out'))
+              ])
+  ],
   host: { '[@slideInOutAnimationOther]': '' }
 })
 export class GameArtComponent implements OnInit, OnDestroy {
@@ -19,6 +31,7 @@ export class GameArtComponent implements OnInit, OnDestroy {
   current: any;
   dialogRef!:MatDialogRef<PasswordComponent>;
   showScrollHelper = true;
+  animationStart = false;
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any) {
     this.showScrollHelper = false;
@@ -36,6 +49,7 @@ export class GameArtComponent implements OnInit, OnDestroy {
         this.setCurrent();
         setTimeout(() => {
           document.getElementsByTagName('app-game-art')[0].classList.add('rel');
+          this.animationStart = true;
         }, 500);
       }
     })    
@@ -56,6 +70,7 @@ export class GameArtComponent implements OnInit, OnDestroy {
       ++this.index;
     }
     this.setCurrent();
+    this.triggerAnimation();
     this.showScrollHelper = true;
   }
 
@@ -66,12 +81,20 @@ export class GameArtComponent implements OnInit, OnDestroy {
       --this.index;
     }
     this.setCurrent();
+    this.triggerAnimation();
     this.showScrollHelper = true;
   }
 
   ngOnDestroy(): void {
     document.getElementsByTagName('app-game-art')[0].classList.remove('rel');
     this.dialogRef.close();
+  }
+
+  triggerAnimation() {
+    this.animationStart = false;
+    setTimeout(() => {
+      this.animationStart = true;
+    }, 500)
   }
 
 }

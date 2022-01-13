@@ -1,10 +1,10 @@
 <div class="games">
   <div class="header">
-    <mat-icon class="left" (click)="next()">keyboard_arrow_left</mat-icon>
-    <span class="name">{{current?.name}}</span>
-    <mat-icon class="right" (click)="prev()">keyboard_arrow_right</mat-icon>
+    <mat-icon class="left" (click)="prev()">keyboard_arrow_left</mat-icon>
+    <span [@fade]="animationStart" class="name">{{current?.name}}</span>
+    <mat-icon class="right" (click)="next()">keyboard_arrow_right</mat-icon>
   </div>
-  <div class="content">
+  <div [@slide]="animationStart" class="content">
     <ng-container *ngFor="let game of current?.images">
       <a *ngIf="!game.name.includes('http')" href="{{game.path}}" target="_blank">
         <img src="{{game.path}}" />

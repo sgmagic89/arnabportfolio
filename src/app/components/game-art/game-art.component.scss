@@ -5,15 +5,16 @@
         width: 100%;
         display: flex;
         position: fixed;
+        z-index: 999;
         top: 0;
-        justify-content: space-around;
+        justify-content: center;
         height: 70px;
         align-items: center;
         background: black;
         .name {
             font-size: 20px;
             color: #B3B3B3;
-            margin: 20px 0px;
+            margin: 25px 50px 20px 50px;
         }    
         mat-icon {
             height: 45px;
@@ -26,10 +27,10 @@
         }
         .left {
             cursor: pointer;
+            margin-right: 15px;
         }
         .right {
             cursor: pointer;
-            margin-right: 20px;
         }
     }
 

@@ -1,0 +1,25 @@
+.animations {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    .anim {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 16px;
+
+        .heading {
+            font-size: x-large;
+            color: #B3B3B3;
+            margin: 20px;
+        }
+    }
+}
+
+.video {
+    height: 80vh;
+    width: 50%;
+    margin-bottom: 25px;
+}

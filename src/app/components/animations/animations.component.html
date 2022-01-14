@@ -1,3 +1,11 @@
-<p>
-  animations works!
-</p>
+<div class="animations">
+  <ng-container *ngFor="let animation of animations">
+    <div class="anim">
+      <span class="heading" [@fade]="animationStart">{{animation.name}}</span>
+      <ng-container *ngFor="let video of animation.videos">
+        <iframe [@slide]="animationStart" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen [src]="video.name | safe">
+        </iframe>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>

@@ -31,6 +31,10 @@ getGameArts() {
   return this.siteData['gamearts'];
 }
 
+getAnimations() {
+  return this.siteData['animations'];
+}
+
 getPassword() {
   return this.siteData["password"];
 }

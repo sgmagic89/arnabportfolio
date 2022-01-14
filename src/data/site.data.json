@@ -135,9 +135,12 @@
         }
     },
     "animations": {
-         "images": [
-           { "name": "https://www.youtube.com/embed/XVzrb-t_l6I" }
-        ]
+        "animation1": {
+            "name": "Show Reel",
+            "videos": [
+                { "name": "https://www.youtube.com/embed/XVzrb-t_l6I" }
+             ]
+        }
     },
     "miscellaneous": {
         "images": [

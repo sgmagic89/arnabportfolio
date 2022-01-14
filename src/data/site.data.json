@@ -64,9 +64,12 @@
         "game1": {
             "name": "Amazing Link Apollo",
             "images": [
-                { "name": "amazing-link-apollo-landscape.jpg" },
-                { "name": "amazing-link-apollo-portrait.jpg" },
-                { "name": "apollo-full-size.jpg" },
+                { "name": "Amazing Link Apollo primary game landscae view_01.jpg" },
+                { "name": "Amazing Link Apollo primary game portrait view_02.jpg" },
+                { "name": "Amazing Link Apollo free game landscae view_03.jpg" },
+                { "name": "Amazing Link Apollo free game portrait view_04.jpg"},
+                { "name": "Apollo symbol_05.jpg"},
+                { "name": "Apollo_Marketing asset_06.jpg"}
                 { "name": "https://www.youtube.com/embed/4QUHAjCx9bU" }
             ]
         },
@@ -93,23 +96,47 @@
             "name": "Atlantis Rising",
             "images": [
                 { "name": "Atlantis Rising Landscape view.jpg" },
-                { "name": "Atlantis character symbols.jpg" },
                 { "name": "Atlantis Rising portrait view.jpg" },
+                { "name": "Atlantis character symbols.jpg" },
                 { "name": "https://www.youtube.com/embed/HNBfIgj72zA" }
             ]
         },
         "game5": {
             "name": "Diamond King Jackpots",
             "images": [
-                { "name": "Diamond King Jackpots free game screen.jpg" },
                 { "name": "Diamond King Jackpots primary game screen.jpg" },
+                { "name": "Diamond King Jackpots free game screen.jpg" }
                 { "name": "https://www.youtube.com/embed/M-syTf5ygkA" }
+            ]
+        },
+        "game6": {
+            "name": "Radiant Arrow",
+            "images": [
+                { "name": "Radiant Arrow primary game screen.jpg" },
+                { "name": "Radiant Arrow free game screen.jpg" }
+            ]
+        },
+        "game7": {
+            "name": "Riches of the West",
+            "images": [
+                { "name": "Riches of the West primary game screen.jpg" },
+                { "name": "Riches of the West free game screen 01.jpg" },
+                { "name": "Riches of the West free game screen 02.jpg" }
+            ]
+        },
+        "game8": {
+            "name": "Untamed Riches",
+            "images": [
+                { "name": "Untamed Riches_Primary Game Screen.jpg" },
+                { "name": "Untamed Riches_Free Game Screen.jpg" },
+                { "name": "Eart_UntamedRiches.jpg" },
+                { "name": "SymHierarchy_UR.jpg" }
             ]
         }
     },
     "animations": {
          "images": [
-            
+           { "name": "https://www.youtube.com/embed/XVzrb-t_l6I" }
         ]
     },
     "miscellaneous": {

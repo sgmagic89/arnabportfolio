@@ -50,7 +50,6 @@ export class GameArtComponent implements OnInit, OnDestroy {
     this.current.images.forEach((image: any) => {
       image["path"] = "assets/images/gallery/gamearts/" + this.current.name + "/" + image.name;
     });
-    console.log(this.current);
   }
 
   next() {

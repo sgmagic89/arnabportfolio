@@ -61,6 +61,7 @@ export class GameArtComponent implements OnInit, OnDestroy {
     }
     this.setCurrent();
     this.triggerAnimation();
+    this.scrollToTop();
     this.showScrollHelper = true;
   }
 
@@ -72,6 +73,7 @@ export class GameArtComponent implements OnInit, OnDestroy {
     }
     this.setCurrent();
     this.triggerAnimation();
+    this.scrollToTop();
     this.showScrollHelper = true;
   }
 
@@ -85,6 +87,14 @@ export class GameArtComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.animationStart = true;
     }, 500)
+  }
+
+  scrollToTop() {
+    window.scroll({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
   }
 
 }

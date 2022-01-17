@@ -7,7 +7,7 @@ import { trigger, state, animate, transition, style } from '@angular/animations'
 
         // end state styles for route container (host)
         state('*', style({
-            // the view covers the whole screen with a semi tranparent background
+            // the view covers the whole screen with a semi transparent background
             position: 'fixed',
             top: 0,
             left: 0,

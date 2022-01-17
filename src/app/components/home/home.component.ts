@@ -1,7 +1,9 @@
-import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { slideInOutAnimation } from 'src/app/animations/animations';
 import { DataService } from 'src/app/services/data.service';
+import { LoaderService } from 'src/app/services/loader.service';
+import { PreLoaderService } from 'src/app/services/pre-loader.service';
 
 @Component({
   selector: 'app-home',
@@ -10,28 +12,33 @@ import { DataService } from 'src/app/services/data.service';
   animations: [slideInOutAnimation],
   host: { '[@slideInOutAnimation]': '' }
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements AfterViewInit, OnDestroy {
   images: any[] = [];
   screenHeight = 0;
-  imagesLoaded = 0;
-  imagesLoaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  subscription: Subscription = <Subscription>{};
+
   @ViewChild('headerCarousel', {static: false}) headerCarousel: any;
   @HostListener('window:resize', ['$event'])
   onResize(even?: any) {
       this.screenHeight = window.innerHeight-15;
   }
-   constructor(private dataService: DataService) {
+   constructor(private dataService: DataService, 
+              private loader: LoaderService,
+              private preLoader: PreLoaderService,
+              private cdr: ChangeDetectorRef) {
   }
  
-   ngOnInit() {
-    this.dataService.getHomeImages().forEach(path => {
-      this.images.push(path);
-    });
+   ngAfterViewInit(): void {
+    this.loader.show();
+    this.images = this.dataService.getHomeImages();
     this.screenHeight = window.innerHeight-15;
-    this.imagesLoaded$.subscribe( loaded => {
+    this.cdr.detectChanges();
+
+    this.subscription = this.preLoader.imagesLoaded$.subscribe( loaded => {
         if(loaded) {
           this.screenHeight = window.innerHeight-15;
           this.headerCarousel.next();
+          this.loader.hide();
           setInterval(() => {
             this.headerCarousel.next();
           },5000);
@@ -39,10 +46,7 @@ export class HomeComponent implements OnInit {
     });
    }
 
-   onAssetsLoad() {
-    this.imagesLoaded++;
-    if(this.imagesLoaded === this.images.length) {
-      this.imagesLoaded$.next(true);
-    }
+   ngOnDestroy(): void {
+    this.subscription.unsubscribe();
    }
 }

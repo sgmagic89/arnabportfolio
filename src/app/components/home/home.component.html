@@ -1,4 +1,4 @@
-<img *ngFor="let image of images" hidden [src]="image.path" (load)="onAssetsLoad()"/>
+<app-preloader [images]="images"></app-preloader>
 <carousel
     #headerCarousel
     [images]="images"

@@ -1,9 +1,11 @@
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import lightGallery from 'lightgallery';
 import { DataService } from 'src/app/services/data.service';
 import lgZoom from 'lightgallery/plugins/zoom';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import { slideInOutAnimation } from 'src/app/animations/animations';
+import { PreLoaderService } from 'src/app/services/pre-loader.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-illustrations',
@@ -12,20 +14,24 @@ import { slideInOutAnimation } from 'src/app/animations/animations';
   animations: [slideInOutAnimation],
   host: { '[@slideInOutAnimation]': '' }
 })
-export class IllustrationsComponent implements AfterViewInit {
-  constructor(private dataService: DataService) {
-  }
-
-  ngAfterViewInit() {
-    const images: any[] = []
-    this.dataService.getIllustrations().forEach(illus => {
-      images.push({
+export class IllustrationsComponent implements OnInit, OnDestroy {
+  preLoadImages: any[] = [];
+  images: any[] = [];
+  subscription: Subscription = <Subscription>{};
+  constructor(private dataService: DataService, private preLoader: PreLoaderService, private cdr: ChangeDetectorRef) {
+    this.preLoadImages.length = 0;
+    this.preLoadImages = this.dataService.getIllustrations();
+    this.preLoadImages.forEach(illus => {
+      this.images.push({
         src: illus.path,
         thumb: illus.path
       })
     });
+  }
+
+  ngOnInit(): void {
     const lgContainer = <HTMLElement>document.getElementById('inline-gallery-container');
-const inlineGallery = lightGallery(lgContainer, {
+    const inlineGallery = lightGallery(lgContainer, {
     mobileSettings: {
       controls: true
     }, 
@@ -48,16 +54,23 @@ const inlineGallery = lightGallery(lgContainer, {
     // You can find caption animation demo on the captions demo page
     slideDelay: 400,
     plugins: [lgZoom, lgThumbnail],
-    dynamicEl: images,
+    dynamicEl: this.images,
     thumbHeight: "85px",
     thumbMargin: 4,
     alignThumbnails: 'middle'
 });
 
 // Since we are using dynamic mode, we need to programmatically open lightGallery
-setTimeout(() => {
-  inlineGallery.openGallery();
-    }, 200);
+this.subscription = this.preLoader.imagesLoaded$.subscribe(loaded => {
+  if(loaded) {
+    inlineGallery.openGallery();
+  }
+});
+
 }
+
+ngOnDestroy(): void {
+  this.subscription.unsubscribe();
+ }
 
 }

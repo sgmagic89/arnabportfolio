@@ -18,6 +18,8 @@ import { NavItemsComponent } from './components/nav/nav-items/nav-items.componen
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { PasswordComponent } from './components/game-art/password/password.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { LoaderComponent } from './components/loader/loader.component';
+import { PreloaderComponent } from './components/preloader/preloader.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { SafePipe } from './pipes/safe.pipe';
     MiscellaneousComponent,
     AboutComponent,
     PasswordComponent,
+    LoaderComponent,
+    PreloaderComponent,
     SafePipe
   ],
   imports: [

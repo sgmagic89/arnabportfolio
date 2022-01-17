@@ -26,6 +26,20 @@ app-illustrations {
     padding: 0;
 }
 
+@media screen and (max-width: 1000px) {
+    .lg-icon {
+        height: 32px;
+        width: 32px;
+        padding: 0;
+    }
+    .lg-prev::after {
+        font-size: xx-large !important;
+    }
+    .lg-next::before {
+        font-size: xx-large !important;
+    }
+}
+
 .lg-next {
     right: 5px;
 }

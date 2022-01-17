@@ -19,3 +19,29 @@ html, body {
 app-illustrations {
     overflow: auto;
 }
+
+.lg-icon {
+    height: 48px;
+    width: 48px;
+    padding: 0;
+}
+
+.lg-next {
+    right: 5px;
+}
+
+.lg-prev {
+    left: 5px;
+}
+
+.lg-prev::after {
+    content: '\e314';
+    font-family: 'Material Icons';
+    font-size: xxx-large;
+}
+
+.lg-next::before {
+    content: '\e315';
+    font-family: 'Material Icons';
+    font-size: xxx-large;
+}

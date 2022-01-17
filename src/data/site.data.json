@@ -70,7 +70,8 @@
                 { "name": "Amazing Link Apollo free game portrait view_04.jpg"},
                 { "name": "Apollo symbol_05.jpg"},
                 { "name": "Apollo_Marketing asset_06.jpg"},
-                { "name": "https://www.youtube.com/embed/4QUHAjCx9bU" }
+                { "name": "https://www.youtube.com/embed/T22RFbW6nqA" },
+                { "name": "https://www.youtube.com/embed/CEG33tbm1D8" }
             ]
         },
         "game2": {
@@ -79,7 +80,8 @@
                 { "name": "Landscape view with single reel set.png" },
                 { "name": "Landscape view with three reel sets.png" },
                 { "name": "Portrait view with three reel sets.png" },
-                { "name": "https://www.youtube.com/embed/Qw5MdW6yXmw" }
+                { "name": "https://www.youtube.com/embed/vJgJwgRwZEA" },
+                { "name": "https://www.youtube.com/embed/JkyEU6238jc" }
             ]
         },
         "game3": {
@@ -89,7 +91,7 @@
                 { "name": "Amazing Link Zeus_Portrait.jpg" },
                 { "name": "Zeus_Concept_LineArt.jpg" },
                 { "name": "Zeus_Full-Size.jpg" },
-                { "name": "https://www.youtube.com/embed/MKQaA2RrXrk" }
+                { "name": "https://www.youtube.com/embed/5Zy6YFMnHu4" }
             ]
         },
         "game4": {
@@ -98,7 +100,7 @@
                 { "name": "Atlantis Rising Landscape view.jpg" },
                 { "name": "Atlantis Rising portrait view.jpg" },
                 { "name": "Atlantis character symbols.jpg" },
-                { "name": "https://www.youtube.com/embed/HNBfIgj72zA" }
+                { "name": "https://www.youtube.com/embed/Tvx3sFtVlyA" }
             ]
         },
         "game5": {
@@ -106,7 +108,7 @@
             "images": [
                 { "name": "Diamond King Jackpots primary game screen.jpg" },
                 { "name": "Diamond King Jackpots free game screen.jpg" },
-                { "name": "https://www.youtube.com/embed/M-syTf5ygkA" }
+                { "name": "https://www.youtube.com/embed/lYd7G2VfRMw" }
             ]
         },
         "game6": {
@@ -127,13 +129,58 @@
         "game8": {
             "name": "Untamed Riches",
             "images": [
+                { "name": "Eart_UntamedRiches.jpg" },
                 { "name": "Untamed Riches_Primary Game Screen.jpg" },
                 { "name": "Untamed Riches_Free Game Screen.jpg" },
-                { "name": "Eart_UntamedRiches.jpg" },
                 { "name": "SymHierarchy_UR.jpg" },
                 { "name": "https://www.youtube.com/embed/PL0hsqW78qc"},
                 { "name": "https://www.youtube.com/embed/Ndd155950lo" },
                 { "name": "https://www.youtube.com/embed/RKX9cFNoGSQ" }
+            ]
+        },
+        "game9": {
+            "name": "Almighty Aztec",
+            "images": [
+                { "name": "Almighty Aztec landscape view.jpg" },
+                { "name": "Almighty Aztec potrait view.jpg" },
+                { "name": "https://www.youtube.com/embed/34scAHvDETE"}
+            ]
+        },
+        "game10": {
+            "name": "Glistening Jade Jackpots",
+            "images": [
+                { "name": "Glistening Jade Jackpots_EArt.jpg" },
+                { "name": "Glistening Jade Jackpots.jpg" },
+                { "name": "https://www.youtube.com/embed/03AjsC9aNwA"}
+            ]
+        },
+        "game11": {
+            "name": "Imperial Legends",
+            "images": [
+                { "name": "Imperial Legends_01.jpg" },
+                { "name": "Monkey King Symbol.jpg" }
+            ]
+        },
+        "game12": {
+            "name": "Rhino King",
+            "images": [
+                { "name": "Rhino King Eart.jpg" },
+                { "name": "Rhino King Primary Game.JPG" },
+                { "name": "Rhino King Free Game.jpg"}
+            ]
+        },
+        "game13": {
+            "name": "Safari Storm Inferno",
+            "images": [
+                { "name": "Safari Storm Inferno Eart.jpg" },
+                { "name": "Safari Storm Inferno_Primary Game.jpg" },
+                { "name": "Safari Storm Inferno_Free Game.jpg"}
+            ]
+        },
+        "game14": {
+            "name": "Starlight 7's",
+            "images": [
+                { "name": "Starlight 7’s.jpg" }
             ]
         }
     },

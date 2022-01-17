@@ -75,6 +75,7 @@ this.subscription = this.preLoader.imagesLoaded$.subscribe(loaded => {
 
 ngOnDestroy(): void {
   this.subscription.unsubscribe();
+  this.preLoader.reset();
  }
 
 }

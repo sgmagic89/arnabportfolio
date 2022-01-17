@@ -48,5 +48,6 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
    ngOnDestroy(): void {
     this.subscription.unsubscribe();
+    this.preLoader.reset();
    }
 }

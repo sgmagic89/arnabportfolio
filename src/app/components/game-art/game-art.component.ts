@@ -94,6 +94,7 @@ export class GameArtComponent implements OnInit, OnDestroy {
     document.getElementsByTagName('app-game-art')[0].classList.remove('rel');
     this.dialogRef.close();
     this.subscription.unsubscribe();
+    this.preLoader.reset();
   }
 
   triggerAnimation() {

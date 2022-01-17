@@ -18,9 +18,12 @@ onAssetsLoad() {
  }
 
  initLoad(totalImages: number) {
-  this.imagesLoaded$.next(false);
    this.totalImages = totalImages;
    this.imagesLoaded = 0;
+ }
+
+ reset() {
+  this.imagesLoaded$.next(false);
  }
 
 }

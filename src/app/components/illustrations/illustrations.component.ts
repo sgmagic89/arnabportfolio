@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import lightGallery from 'lightgallery';
 import { DataService } from 'src/app/services/data.service';
 import lgZoom from 'lightgallery/plugins/zoom';
@@ -20,6 +20,11 @@ export class IllustrationsComponent implements OnInit, OnDestroy {
   images: any[] = [];
   subscription: Subscription = <Subscription>{};
   constructor(private dataService: DataService, private preLoader: PreLoaderService, private loader: LoaderService) {
+   
+  }
+
+  ngOnInit(): void {
+    this.loader.show();
     this.preLoadImages.length = 0;
     this.preLoadImages = this.dataService.getIllustrations();
     this.preLoadImages.forEach(illus => {
@@ -28,10 +33,6 @@ export class IllustrationsComponent implements OnInit, OnDestroy {
         thumb: illus.path
       })
     });
-  }
-
-  ngOnInit(): void {
-    this.loader.show();
     const lgContainer = <HTMLElement>document.getElementById('inline-gallery-container');
     const inlineGallery = lightGallery(lgContainer, {
     mobileSettings: {

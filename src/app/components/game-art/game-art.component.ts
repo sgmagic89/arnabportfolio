@@ -54,6 +54,7 @@ export class GameArtComponent implements OnInit, OnDestroy {
     this.subscription = this.preLoader.imagesLoaded$.subscribe(loaded => {
       if(loaded) {
         this.loader.hide();
+        this.triggerAnimation();
       }
     })
   }
@@ -74,7 +75,6 @@ export class GameArtComponent implements OnInit, OnDestroy {
       ++this.index;
     }
     this.setCurrent();
-    this.triggerAnimation();
     this.scrollToTop();
     this.showScrollHelper = true;
   }
@@ -86,7 +86,6 @@ export class GameArtComponent implements OnInit, OnDestroy {
       --this.index;
     }
     this.setCurrent();
-    this.triggerAnimation();
     this.scrollToTop();
     this.showScrollHelper = true;
   }

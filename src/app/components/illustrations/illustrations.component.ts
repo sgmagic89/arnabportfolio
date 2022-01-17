@@ -26,6 +26,9 @@ export class IllustrationsComponent implements AfterViewInit {
     });
     const lgContainer = <HTMLElement>document.getElementById('inline-gallery-container');
 const inlineGallery = lightGallery(lgContainer, {
+    mobileSettings: {
+      controls: true
+    }, 
     container: lgContainer,
     dynamic: true,
     // Turn off hash plugin in case if you are using it

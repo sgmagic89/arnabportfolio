@@ -29,7 +29,7 @@ import { trigger, state, animate, transition, style } from '@angular/animations'
             }),
 
             // animation and styles at end of transition
-            animate('2s ease-in-out', style({
+            animate('1s ease-in-out', style({
                 // transition the right position to 0 which slides the content into view
                 transform: 'translateX(0)',
                 // transition the background opacity to 0.8 to fade it in

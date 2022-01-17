@@ -6,6 +6,7 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import { slideInOutAnimation } from 'src/app/animations/animations';
 import { PreLoaderService } from 'src/app/services/pre-loader.service';
 import { Subscription } from 'rxjs';
+import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
   selector: 'app-illustrations',
@@ -18,7 +19,7 @@ export class IllustrationsComponent implements OnInit, OnDestroy {
   preLoadImages: any[] = [];
   images: any[] = [];
   subscription: Subscription = <Subscription>{};
-  constructor(private dataService: DataService, private preLoader: PreLoaderService, private cdr: ChangeDetectorRef) {
+  constructor(private dataService: DataService, private preLoader: PreLoaderService, private loader: LoaderService) {
     this.preLoadImages.length = 0;
     this.preLoadImages = this.dataService.getIllustrations();
     this.preLoadImages.forEach(illus => {
@@ -30,6 +31,7 @@ export class IllustrationsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.loader.show();
     const lgContainer = <HTMLElement>document.getElementById('inline-gallery-container');
     const inlineGallery = lightGallery(lgContainer, {
     mobileSettings: {
@@ -63,6 +65,7 @@ export class IllustrationsComponent implements OnInit, OnDestroy {
 // Since we are using dynamic mode, we need to programmatically open lightGallery
 this.subscription = this.preLoader.imagesLoaded$.subscribe(loaded => {
   if(loaded) {
+    this.loader.hide();
     inlineGallery.openGallery();
   }
 });

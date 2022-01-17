@@ -1,7 +1,10 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 import { fadeAnimation, slideAnimation } from 'src/app/animations/animations';
 import { DataService } from 'src/app/services/data.service';
+import { LoaderService } from 'src/app/services/loader.service';
+import { PreLoaderService } from 'src/app/services/pre-loader.service';
 import { PasswordComponent } from './password/password.component';
 
 @Component({
@@ -22,11 +25,16 @@ export class GameArtComponent implements OnInit, OnDestroy {
   dialogRef!:MatDialogRef<PasswordComponent>;
   showScrollHelper = true;
   animationStart = false;
+  preloadImages: any[] = [];
+  subscription: Subscription = <Subscription>{};
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any) {
     this.showScrollHelper = false;
   }
-  constructor(private dataService: DataService, public dialog: MatDialog) {
+  constructor(private dataService: DataService, 
+              public dialog: MatDialog, 
+              private preLoader: PreLoaderService,
+              private loader: LoaderService) {
     this.data = this.dataService.getGameArts();
     this.keys = Object.keys(this.data);
     this.total = this.keys.length;
@@ -47,9 +55,16 @@ export class GameArtComponent implements OnInit, OnDestroy {
 
   setCurrent() {
     this.current = this.data[this.keys[this.index]];
+    this.loader.show();
     this.current.images.forEach((image: any) => {
       image["path"] = "assets/images/gallery/gamearts/" + this.current.name + "/" + image.name;
     });
+    this.preloadImages = this.current.images.filter((image: any) => !image.path.includes('http'));
+    this.subscription = this.preLoader.imagesLoaded$.subscribe(loaded => {
+      if(loaded) {
+        this.loader.hide();
+      }
+    })
   }
 
   next() {
@@ -79,6 +94,7 @@ export class GameArtComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     document.getElementsByTagName('app-game-art')[0].classList.remove('rel');
     this.dialogRef.close();
+    this.subscription.unsubscribe();
   }
 
   triggerAnimation() {

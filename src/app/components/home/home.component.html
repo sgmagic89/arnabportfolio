@@ -1,13 +1,14 @@
+<img *ngFor="let image of images" hidden [src]="image.path" (load)="onAssetsLoad()"/>
 <carousel
     #headerCarousel
     [images]="images"
-    [arrowsOutside]="false"
-    [loop]="true"
+    [arrowsOutside]=false
+    [autoplay]=true
+    [loop]=true
     [height]="screenHeight"
     [cellWidth]=600
     [margin]=-207
     [pauseOnHover]=false
     [arrows]=false
-    *ngIf=show
     >
 </carousel>

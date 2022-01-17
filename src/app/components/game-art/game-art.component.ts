@@ -50,7 +50,12 @@ export class GameArtComponent implements OnInit, OnDestroy {
           this.animationStart = true;
         }, 500);
       }
-    })    
+    });    
+    this.subscription = this.preLoader.imagesLoaded$.subscribe(loaded => {
+      if(loaded) {
+        this.loader.hide();
+      }
+    })
   }
 
   setCurrent() {
@@ -60,11 +65,6 @@ export class GameArtComponent implements OnInit, OnDestroy {
       image["path"] = "assets/images/gallery/gamearts/" + this.current.name + "/" + image.name;
     });
     this.preloadImages = this.current.images.filter((image: any) => !image.path.includes('http'));
-    this.subscription = this.preLoader.imagesLoaded$.subscribe(loaded => {
-      if(loaded) {
-        this.loader.hide();
-      }
-    })
   }
 
   next() {

@@ -75,7 +75,7 @@
             ]
         },
         "game2": {
-            "name": "Butterfly STAXX 2",
+            "name": "Butterfly Staxx 2",
             "images": [
                 { "name": "Landscape view with single reel set.png" },
                 { "name": "Landscape view with three reel sets.png" },
@@ -178,9 +178,10 @@
             ]
         },
         "game14": {
-            "name": "Starlight 7's",
+            "name": "Star Light 7s",
             "images": [
-                { "name": "Starlight 7’s.jpg" }
+                { "name": "Star Light 7s_PayTable Eart.jpg" },
+                { "name": "Star Light 7s_GameScreen.jpg" }
             ]
         }
     },

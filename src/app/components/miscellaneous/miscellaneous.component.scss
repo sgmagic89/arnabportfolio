@@ -1,0 +1,66 @@
+.misc {
+    display: flex;
+    flex-direction: column;
+    .header {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        justify-content: space-around;
+        height: 70px;
+        align-items: center;
+        background: black;
+        .name {
+            font-size: 20px;
+            color: #B3B3B3;
+            margin: 25px -25px 20px 0px;
+        }    
+        mat-icon {
+            height: 45px;
+            width: 45px;
+            font-size: 50px;
+            color: #B3B3B3;
+        }
+        mat-icon:hover {
+            color: #ff8400;
+        }
+        .left {
+            cursor: pointer;
+        }
+        .right {
+            cursor: pointer;
+            margin-right: 25px;
+        }
+    }
+
+    .content {
+        margin-top: 65px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        a {
+            width: inherit;
+        }
+        img {
+            width: -webkit-fill-available;
+            margin-bottom: 30px;
+            object-fit: contain;
+            max-height: 100vh;
+        }
+        .projectHeader {
+            font-size: 18px;
+            color: #B3B3B3;
+            margin: 20px;
+            font-weight: bold;
+        }
+    }
+}
+
+::ng-deep .mat-divider {
+    border-top-color: white;
+    border-top-width: 30px !important;
+    width: 100%;
+    margin-bottom: 10px;
+}

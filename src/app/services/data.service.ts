@@ -22,7 +22,7 @@ getHomeImages() {
 getIllustrations() {
   const paths: any[] = [];
   this.siteData['illustrations'].images.forEach((image: any) => {
-    paths.push({path: '/assets/images/gallery/'+ 'illustrations' + '/' + image.name })
+    paths.push({path: '/assets/images/gallery/illustrations/' + image.name })
   });
   return paths;
 }
@@ -40,6 +40,12 @@ getMiscellaneousCategories() {
 }
 
 getMiscellaneousProjects(categoryName: string) {
+  this.siteData['miscellaneous'][categoryName].forEach((project:any) => {
+    project.images.forEach((image: any) => {
+      if(!image.path)
+      image['path'] = "/assets/images/gallery/miscellaneous/" + categoryName + "/" + project.name + "/" + image.name;
+    });
+  });
   return this.siteData['miscellaneous'][categoryName];
 }
 

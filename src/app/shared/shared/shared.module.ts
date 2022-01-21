@@ -5,6 +5,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
   imports: [
     CommonModule,
@@ -12,14 +13,16 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatDividerModule
   ],
   exports: [
     MatIconModule,
     MatDialogModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatDividerModule
   ],
   declarations: []
 })

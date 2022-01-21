@@ -35,6 +35,14 @@ getAnimations() {
   return this.siteData['animations'];
 }
 
+getMiscellaneousCategories() {
+  return Object.keys(this.siteData['miscellaneous']);
+}
+
+getMiscellaneousProjects(categoryName: string) {
+  return this.siteData['miscellaneous'][categoryName];
+}
+
 getPassword() {
   return this.siteData["password"];
 }

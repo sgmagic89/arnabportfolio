@@ -194,8 +194,38 @@
         }
     },
     "miscellaneous": {
-        "images": [
-            
+        "Character Designs": [
+            {
+                "name": "Disney's Legends Of the Ring Of Fire",
+                "images": [
+                    { "name": "Girl child.jpg" },
+                    { "name": "Gong man.jpg" },
+                    { "name": "Grandpa.jpg" },
+                    { "name": "Kid.jpg" },
+                    { "name": "Kid's mother.jpg" },
+                    { "name": "Taro's goat.jpg" }
+                ]
+            }
+        ],
+        "Storyboards": [
+            {
+                "name": "Mount Olympus Magic The Spirit Games",
+                "images": [
+                    { "name": "Sb_001.jpg" },
+                    { "name": "Sb_002.jpg" },
+                    { "name": "Sb_003.jpg" },
+                    { "name": "Sb_004.jpg" },
+                    { "name": "Sb_005.jpg" },
+                    { "name": "Sb_006.jpg" },
+                    { "name": "Sb_007.jpg" },
+                    { "name": "Sb_008.jpg" },
+                    { "name": "Sb_009.jpg" },
+                    { "name": "Sb_0010.jpg" },
+                    { "name": "Sb_0011.jpg" },
+                    { "name": "Sb_0012.jpg" },
+                    { "name": "Sb_0013.jpg" }
+                ]
+            }
         ]
     },
     "about": {

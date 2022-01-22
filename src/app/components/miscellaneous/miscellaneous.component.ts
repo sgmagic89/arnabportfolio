@@ -25,12 +25,14 @@ export class MiscellaneousComponent implements OnInit, OnDestroy {
   subscription: Subscription = <Subscription>{};
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any) {
-    this.showScrollHelper = false;
+    if(this.showScrollHelper) {
+      this.showScrollHelper = false;
+    }
   }
   constructor(private dataService: DataService,
               private preLoader: PreLoaderService,
               private loader: LoaderService) {
-    this.categories = this.dataService.getMiscellaneousCategories();
+              this.categories = this.dataService.getMiscellaneousCategories();
   }
 
   ngOnInit() {
@@ -40,6 +42,10 @@ export class MiscellaneousComponent implements OnInit, OnDestroy {
       if(loaded) {
         this.loader.hide();
         this.triggerAnimation();
+        this.scrollToTop();
+        setTimeout(() => {
+          this.isScrollHelperVisible();
+        }, 1000)
       }
     })
   }
@@ -51,8 +57,6 @@ export class MiscellaneousComponent implements OnInit, OnDestroy {
         this.index++;
       }
       this.setCurrent();
-      this.showScrollHelper = true;
-      this.scrollToTop();
   }
 
   prev() {
@@ -62,8 +66,6 @@ export class MiscellaneousComponent implements OnInit, OnDestroy {
       this.index--;
     }
     this.setCurrent();
-    this.showScrollHelper = true;
-    this.scrollToTop();
   }
 
   setCurrent() {
@@ -74,6 +76,7 @@ export class MiscellaneousComponent implements OnInit, OnDestroy {
     this.currentProjects.forEach( project => {
       this.preloadImages = this.preloadImages.concat(project.images);
     });
+    this.isScrollHelperVisible();
   }
 
   
@@ -91,6 +94,14 @@ export class MiscellaneousComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.animationStart = true;
     });
+  }
+
+  isScrollHelperVisible() {
+    if(document.body.scrollHeight > document.body.offsetHeight) {
+      this.showScrollHelper = true;
+    } else {
+      this.showScrollHelper = false;
+    }
   }
 
   ngOnDestroy(): void {

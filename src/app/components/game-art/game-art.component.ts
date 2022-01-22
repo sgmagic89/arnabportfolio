@@ -29,7 +29,9 @@ export class GameArtComponent implements OnInit, OnDestroy {
   subscription: Subscription = <Subscription>{};
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any) {
-    this.showScrollHelper = false;
+    if(this.showScrollHelper) {
+      this.showScrollHelper = false;
+    }
   }
   constructor(private dataService: DataService, 
               public dialog: MatDialog, 
@@ -55,6 +57,10 @@ export class GameArtComponent implements OnInit, OnDestroy {
       if(loaded) {
         this.loader.hide();
         this.triggerAnimation();
+        this.scrollToTop();
+        setTimeout(() => {
+          this.isScrollHelperVisible();
+        },1000)
       }
     })
   }
@@ -75,8 +81,6 @@ export class GameArtComponent implements OnInit, OnDestroy {
       ++this.index;
     }
     this.setCurrent();
-    this.scrollToTop();
-    this.showScrollHelper = true;
   }
 
   prev() {
@@ -86,8 +90,6 @@ export class GameArtComponent implements OnInit, OnDestroy {
       --this.index;
     }
     this.setCurrent();
-    this.scrollToTop();
-    this.showScrollHelper = true;
   }
 
   ngOnDestroy(): void {
@@ -95,6 +97,14 @@ export class GameArtComponent implements OnInit, OnDestroy {
     this.dialogRef.close();
     this.subscription.unsubscribe();
     this.preLoader.reset();
+  }
+
+  isScrollHelperVisible() {
+    if(document.body.scrollHeight > document.body.offsetHeight) {
+      this.showScrollHelper = true;
+    } else {
+      this.showScrollHelper = false;
+    }
   }
 
   triggerAnimation() {

@@ -31,10 +31,10 @@ export class MiscellaneousComponent implements OnInit, OnDestroy {
               private preLoader: PreLoaderService,
               private loader: LoaderService) {
     this.categories = this.dataService.getMiscellaneousCategories();
-    this.setCurrent();
   }
 
   ngOnInit() {
+    this.setCurrent();
     this.animationStart = true;
     this.subscription = this.preLoader.imagesLoaded$.subscribe(loaded => {
       if(loaded) {

@@ -69,8 +69,9 @@ export class MiscellaneousComponent implements OnInit, OnDestroy {
   setCurrent() {
     this.currentCategory = this.categories[this.index];
     this.currentProjects = this.dataService.getMiscellaneousProjects(this.currentCategory);
+    this.preloadImages.length = 0;
     this.currentProjects.forEach( project => {
-      this.preloadImages = project.images;
+      this.preloadImages = this.preloadImages.concat(project.images);
     });
   }
 

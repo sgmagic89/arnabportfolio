@@ -67,6 +67,7 @@ export class MiscellaneousComponent implements OnInit, OnDestroy {
   }
 
   setCurrent() {
+    this.loader.show();
     this.currentCategory = this.categories[this.index];
     this.currentProjects = this.dataService.getMiscellaneousProjects(this.currentCategory);
     this.preloadImages.length = 0;

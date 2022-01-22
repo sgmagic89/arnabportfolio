@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { slideAnimation, fadeAnimation } from 'src/app/animations/animations';
 import { DataService } from 'src/app/services/data.service';
+import { LoaderService } from 'src/app/services/loader.service';
+import { PreLoaderService } from 'src/app/services/pre-loader.service';
 
 @Component({
   selector: 'app-miscellaneous',
@@ -11,28 +14,45 @@ import { DataService } from 'src/app/services/data.service';
     fadeAnimation
   ]
 })
-export class MiscellaneousComponent implements OnInit {
+export class MiscellaneousComponent implements OnInit, OnDestroy {
   animationStart = false;
   categories:string[] = [];
   currentProjects: any[] = [];
   currentCategory: any;
   index = 0;
-  constructor(private dataService: DataService) {
+  showScrollHelper = true;
+  preloadImages: any[] = [];
+  subscription: Subscription = <Subscription>{};
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: any) {
+    this.showScrollHelper = false;
+  }
+  constructor(private dataService: DataService,
+              private preLoader: PreLoaderService,
+              private loader: LoaderService) {
     this.categories = this.dataService.getMiscellaneousCategories();
     this.setCurrent();
   }
 
   ngOnInit() {
     this.animationStart = true;
+    this.subscription = this.preLoader.imagesLoaded$.subscribe(loaded => {
+      if(loaded) {
+        this.loader.hide();
+        this.triggerAnimation();
+      }
+    })
   }
 
   next() {
-    if(this.index === this.categories.length - 1) {
-      this.index = 0;
-    } else {
-      this.index++;
-    }
-    this.setCurrent();
+      if(this.index === this.categories.length - 1) {
+        this.index = 0;
+      } else {
+        this.index++;
+      }
+      this.setCurrent();
+      this.showScrollHelper = true;
+      this.scrollToTop();
   }
 
   prev() {
@@ -42,11 +62,38 @@ export class MiscellaneousComponent implements OnInit {
       this.index--;
     }
     this.setCurrent();
+    this.showScrollHelper = true;
+    this.scrollToTop();
   }
 
   setCurrent() {
     this.currentCategory = this.categories[this.index];
     this.currentProjects = this.dataService.getMiscellaneousProjects(this.currentCategory);
+    this.currentProjects.forEach( project => {
+      this.preloadImages = project.images;
+    });
+  }
+
+  
+  scrollToTop() {
+    window.scroll({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
+  }
+
+  
+  triggerAnimation() {
+    this.animationStart = false;
+    setTimeout(() => {
+      this.animationStart = true;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+    this.preLoader.reset();
   }
 
 }

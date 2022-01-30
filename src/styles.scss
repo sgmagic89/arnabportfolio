@@ -59,3 +59,15 @@ app-illustrations {
     font-family: 'Material Icons';
     font-size: xxx-large;
 }
+
+.pz-zoom-button.pz-zoom-control-position-bottom {
+    top: 5px;
+    right: 5%;
+    margin-left: -28px;
+}
+
+.pz-zoom-button {
+    height: 30px !important;
+    width: 30px !important;
+    background-size: 25px !important;
+}

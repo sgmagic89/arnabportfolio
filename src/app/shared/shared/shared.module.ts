@@ -6,6 +6,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import {MatDividerModule} from '@angular/material/divider';
+import { PinchZoomModule } from 'ngx-pinch-zoom';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,7 +15,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatInputModule,
     MatButtonModule,
     FormsModule,
-    MatDividerModule
+    MatDividerModule,
+    PinchZoomModule
   ],
   exports: [
     MatIconModule,
@@ -22,7 +24,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatInputModule,
     MatButtonModule,
     FormsModule,
-    MatDividerModule
+    MatDividerModule,
+    PinchZoomModule
   ],
   declarations: []
 })

@@ -7,6 +7,7 @@ import { slideInOutAnimation } from 'src/app/animations/animations';
 import { PreLoaderService } from 'src/app/services/pre-loader.service';
 import { Subscription } from 'rxjs';
 import { LoaderService } from 'src/app/services/loader.service';
+import fjGallery from 'flickr-justified-gallery';
 
 @Component({
   selector: 'app-illustrations',
@@ -41,7 +42,12 @@ export class IllustrationsComponent implements AfterViewInit, OnDestroy {
 this.subscription = this.preLoader.imagesLoaded$.subscribe(loaded => {
   if(loaded) {
     this.loader.hide();
-    this.initGallery()
+
+    this.initGallery();
+    fjGallery(document.querySelectorAll('.fj-gallery'), {
+      itemSelector: '.fj-gallery-item',
+      rowHeight: 650
+    });
   }
 });
 
@@ -54,12 +60,12 @@ initGallery() {
     controls: true
   }, 
   container: lgContainer,
-  dynamic: false,
   // Turn off hash plugin in case if you are using it
   // as we don't want to change the url on slide change
   hash: false,
   // Do not allow users to close the gallery
-  closable: false,
+  closable: true,
+  thumbnail: true,
   // Add maximize icon to enlarge the gallery
   showMaximizeIcon: false,
   download: false,
@@ -71,11 +77,12 @@ initGallery() {
   // before navigating to different slides (Optional)
   // You can find caption animation demo on the captions demo page
   slideDelay: 400,
-  plugins: [lgZoom, lgThumbnail],
+  plugins: [lgZoom],
+  dynamicEl: this.images,
   thumbHeight: "85px",
   thumbMargin: 4,
-  alignThumbnails: 'middle'
-  });
+  alignThumbnails: 'middle',
+});
   // inlineGallery.openGallery();
 }
 

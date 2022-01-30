@@ -1,9 +1,11 @@
 <app-preloader [images]="preLoadImages"></app-preloader>
 
 <div class="illustrations">
-  <div id="inline-gallery-container" class="inline-gallery-container">
-    <a [href]="img.src" *ngFor="img of images">
-      <img [src]="img.src" />
-    </a>
+  <div id="inline-gallery-container" class="inline-gallery-container fj-gallery" id="justifiedgallery">
+    <div class="fj-gallery-item" *ngFor="let img of images">
+      <pinch-zoom [wheel]=false disableZoomControl="never">
+        <img class="gallery-item" [src]="img.src" />
+      </pinch-zoom>
+    </div>
   </div>
 </div>

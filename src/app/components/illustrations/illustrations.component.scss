@@ -45,16 +45,26 @@
 .open {
     position: absolute;
     top: 5px;
-    right: 10px;
+    right: 42%;
+    height: 30px;
     text-align: center;
     vertical-align: flex;
     border-radius: 5px;
-    background: #0000007a;
+    background: rgb(0 0 0 / 40%);
+    width: 30px;
     mat-icon {
-        color: #B3B3B3;
+        color: rgba(255, 255, 255, 0.719);
         font-size: large;
         padding: 6px;
         height: 0px;
         width: auto;
+        opacity: 0.7;
+    }
+}
+
+.open:hover {
+    background: rgb(0 0 0 / 60%);
+    mat-icon {
+        color: #fff;
     }
 }

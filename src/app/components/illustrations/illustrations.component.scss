@@ -45,13 +45,14 @@
 .open {
     position: absolute;
     top: 5px;
-    right: 42%;
+    right: 10px;
     height: 30px;
     text-align: center;
     vertical-align: flex;
     border-radius: 5px;
     background: rgb(0 0 0 / 40%);
     width: 30px;
+
     mat-icon {
         color: rgba(255, 255, 255, 0.719);
         font-size: large;

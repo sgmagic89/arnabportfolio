@@ -5,6 +5,7 @@
     <div class="fj-gallery-item" *ngFor="let img of images">
       <pinch-zoom [wheel]=false disableZoomControl="never">
         <img class="gallery-item" [src]="img.src" />
+        <a [href]="img.src" class="open" target="_blank" matTooltip="View in new Tab"><mat-icon>open_in_new</mat-icon></a>
       </pinch-zoom>
     </div>
   </div>

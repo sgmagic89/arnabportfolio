@@ -43,10 +43,10 @@ this.subscription = this.preLoader.imagesLoaded$.subscribe(loaded => {
   if(loaded) {
     this.loader.hide();
 
-    this.initGallery();
+    // this.initGallery();
     fjGallery(document.querySelectorAll('.fj-gallery'), {
       itemSelector: '.fj-gallery-item',
-      rowHeight: 650
+      rowHeight: 800
     });
   }
 });

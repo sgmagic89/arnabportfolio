@@ -54,7 +54,7 @@ initGallery() {
     controls: true
   }, 
   container: lgContainer,
-  dynamic: true,
+  dynamic: false,
   // Turn off hash plugin in case if you are using it
   // as we don't want to change the url on slide change
   hash: false,
@@ -72,12 +72,11 @@ initGallery() {
   // You can find caption animation demo on the captions demo page
   slideDelay: 400,
   plugins: [lgZoom, lgThumbnail],
-  dynamicEl: this.images,
   thumbHeight: "85px",
   thumbMargin: 4,
   alignThumbnails: 'middle'
   });
-  inlineGallery.openGallery();
+  // inlineGallery.openGallery();
 }
 
 ngOnDestroy(): void {

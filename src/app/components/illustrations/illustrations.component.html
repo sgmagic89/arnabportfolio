@@ -1,5 +1,9 @@
 <app-preloader [images]="preLoadImages"></app-preloader>
 
 <div class="illustrations">
-  <div id="inline-gallery-container" class="inline-gallery-container"></div>
+  <div id="inline-gallery-container" class="inline-gallery-container">
+    <a href="img.src" *ngFor="img of images">
+      <img src="img.src" />
+    </a>
+  </div>
 </div>

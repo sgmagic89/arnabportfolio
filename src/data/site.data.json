@@ -226,6 +226,20 @@
                     { "name": "Sb_013.jpg" }
                 ]
             }
+        ],
+        "Life Drawings & Sketches": [
+            {
+                "name": "",
+                "images": [
+                    { "name": "Life Drawings_01.jpg" },
+                    { "name": "Life Drawings_02.jpg" },
+                    { "name": "Life Drawings_03.jpg" },
+                    { "name": "Life Drawings_04.jpg" },
+                    { "name": "Life Drawings_05.jpg" },
+                    { "name": "Life Drawings_06.jpg" },
+                    { "name": "Life Drawings_07.jpg" }
+                ]
+            }
         ]
     },
     "about": {

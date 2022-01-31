@@ -243,9 +243,12 @@
         ]
     },
     "about": {
-        "images": [
-            
-        ]
+        "links": {
+            "li": "https://www.linkedin.com/in/arnab-de-56b10624/",
+            "fb": "https://www.facebook.com/arnab.de.18",
+            "as": "https://www.artstation.com/arnabde"
+        },
+        "email": "arnab.in@gmail.com"
     },
     "password": "test"
 }

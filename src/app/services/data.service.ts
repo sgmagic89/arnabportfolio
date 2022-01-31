@@ -49,6 +49,14 @@ getMiscellaneousProjects(categoryName: string) {
   return this.siteData['miscellaneous'][categoryName];
 }
 
+getLink(network: string) {
+  return this.siteData.about.links[network];
+}
+
+getEmail() {
+  return this.siteData.about.email;
+}
+
 getPassword() {
   return this.siteData["password"];
 }

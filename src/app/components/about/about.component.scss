@@ -11,11 +11,13 @@
 
         >img {
             height: inherit;
+            margin-top: -35px;
             border-radius: 50%;
             border: 10px solid white;
         }
         
         .socialLinks {
+            margin-top: 20px;
             .iconCont {
                 display: flex;
                 align-items: center;
@@ -61,7 +63,7 @@
     }
 
     .aboutText {
-        margin: 50px;
+        margin: 140px 50px 50px 50px;
         .text {
             color: white;
             max-width: 600px;
@@ -71,6 +73,8 @@
             }
             p {
                 font-size: larger;
+                line-height: 30px;
+                word-spacing: 2px;
             }
         }
 
@@ -85,9 +89,13 @@
             height: 300px;
             width: 300px;
             margin: 40px;
+            >img {
+            margin-top: 0px;
+            }
         }
 
         .aboutText {
+            margin: 50px;
             padding-top: 50px;
         }
     }

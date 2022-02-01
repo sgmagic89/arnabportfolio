@@ -49,6 +49,14 @@ getMiscellaneousProjects(categoryName: string) {
   return this.siteData['miscellaneous'][categoryName];
 }
 
+getAboutText() {
+  const paras: string[]= [];
+  Object.keys(this.siteData.about.text).forEach(key => {
+    paras.push(this.siteData.about.text[key]);
+  });
+  return paras;
+}
+
 getLink(network: string) {
   return this.siteData.about.links[network];
 }

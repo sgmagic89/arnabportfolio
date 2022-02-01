@@ -5,80 +5,88 @@
     align-items: center;
     justify-content: center;
     .image {
-        height: 400px;
-        width: 400px;
+        height: 300px;
+        width: 300px;
         margin: 40px;
-
         >img {
             height: inherit;
-            margin-top: -35px;
-            border-radius: 50%;
-            border: 10px solid white;
-        }
-        
-        .socialLinks {
-            margin-top: 20px;
-            .iconCont {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                a:not(:nth-child(1)){
-                    margin-left: 40px;
-                }
-                a {
-                    transition: transform .2s;
-                }
-                a:hover {
-                    transform: scale(1.5);
-                }
-                .li {
-                    height: 64px;
-                    width: 64px;
-                    img {
-                        height: inherit;
-                    }
-                }
-                .fb {
-                    height: 48px;
-                    width: 48px;
-                    img {
-                        height: inherit;
-                    }
-                }
-                .as {
-                    height: 30px;
-                    width: 30px;
-                    background-color: white;
-                    border-radius: 50%;
-                    padding: 10px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    img {
-                        height: inherit;
-                    }
-                }
-            }
+            border: 5px solid white;
+            border-radius: 5px;
         }
     }
 
     .aboutText {
-        margin: 140px 50px 50px 50px;
+        margin: 120px 50px 50px 50px;
         .text {
             color: white;
-            max-width: 600px;
+            max-width: 750px;
             padding-bottom: 20px;
             h1 {
                 font-size: xxx-large;
+                margin: 0 0 50px;
             }
             p {
                 font-size: larger;
-                line-height: 30px;
+                line-height: 25px;
                 word-spacing: 1px;
                 text-align: justify;
             }
         }
 
+    }
+}
+
+.socialLinks {
+    margin-bottom: 25px;
+    .iconCont {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        justify-content: flex-end;
+        .links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .email {
+            color: white;
+            font-size: large;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+        a:not(:nth-child(1)){
+            margin-left: 30px;
+        }
+        .li {
+            height: 42px;
+            img {
+                height: inherit;
+            }
+        }
+        .li:hover {
+            filter: invert(28%) sepia(93%) saturate(1022%) hue-rotate(172deg) brightness(101%) contrast(102%);
+        }
+        .fb {
+            height: 32px;
+            filter: invert(1);
+            img {
+                height: inherit;
+            }
+        }
+
+        .fb:hover {
+            filter: invert(34%) sepia(53%) saturate(528%) hue-rotate(182deg) brightness(93%) contrast(91%);
+        }
+        .as {
+            height: 36px;
+            filter: invert(1);
+            img {
+                height: inherit;
+            }
+        }
+        .as:hover {
+            filter: invert(50%) sepia(85%) saturate(1203%) hue-rotate(163deg) brightness(96%) contrast(89%);
+        }
     }
 }
 
@@ -96,11 +104,11 @@
         }
 
         .aboutText {
-            margin: 45px 25px;
-            padding-top: 50px;
+            margin: 20px 25px;
+            padding-top: 0px;
             .text {
                 p {
-                    text-align: left;
+                    text-align: justify;
                 }
             }
         }

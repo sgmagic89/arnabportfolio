@@ -3,22 +3,6 @@
 <div [@slide]="animationStart" class="about">
 <div class="image">
 <img src="assets/images/about/arnab.png" />
-<div class="socialLinks">
-  <div class="iconCont">
-    <a matTooltip="Linkedin Profile" [href]="dataService.getLink('li')" target="_blank" class="li">
-      <img src="assets/images/about/li.png" />
-    </a>
-    <a matTooltip="Facebook Profile" [href]="dataService.getLink('fb')" target="_blank" class="fb">
-      <img src="assets/images/about/fb.png" />
-    </a>
-    <a matTooltip="ArtStation Profile" [href]="dataService.getLink('as')" target="_blank" class="as">
-      <img src="assets/images/about/as.png" />
-    </a>
-    <a [matTooltip]="'Email: '+dataService.getEmail()" [href]="'mailto:'+dataService.getEmail()" target="_blank" class="fb">
-      <img src="assets/images/about/email.png" />
-    </a>
-  </div>
-</div>
 </div>
 <div class="aboutText">
   <div class="text">
@@ -27,10 +11,31 @@
     </h1>
     <p>
         My artistic family background has influenced me immensely while growing up. I started drawing and painting naturally at a very young age, for as long as I can remember. My passion for drawing and painting had eventually landed me at Zed Institute of Creative Arts to attend a 3 years diploma in Animation Film Designing program. This was after I completed a Bachelor’s degree in Science from University of Calcutta.
-        During my tenure in Gaming and Animation industry for over 23 years, I worked with reputed organizations from USA, India and Europe in different capacities. I lived in Las Vegas and had been associated with Konami Gaming Inc., for over a decade as a consultant and delivered game-art and graphics for many slot gaming titles. Besides that, I did art directions for many online games from NetEnt and SpinPlay Games.
-        In the first phase of my career, I had extensive experience in traditional animation productions. I worked on some of the prestigious animation projects from Walt Disney, Discovery Kids, Fox Animation Studios, Zoom Cartoons Entertainment, and many more.
-        I also love singing and take a lot of interest in world music.
     </p>
+    <p>
+      During my tenure in Gaming and Animation industry for over 23 years, I worked with reputed organizations from USA, India and Europe in different capacities. I lived in Las Vegas and had been associated with Konami Gaming Inc., for over a decade as a consultant and delivered game-art and graphics for many slot gaming titles. Besides that, I did art directions for many online games from NetEnt and SpinPlay Games.
+    </p>
+    <p>
+      In the first phase of my career, I had extensive experience in traditional animation productions. I worked on some of the prestigious animation projects from Walt Disney, Discovery Kids, Fox Animation Studios, Zoom Cartoons Entertainment, and many more. I also love singing and take a lot of interest in world music.
+    </p>
+  </div>
+  <div class="socialLinks">
+    <div class="iconCont">
+      <div class="email">
+        <span>{{dataService.getEmail()}}</span>
+      </div>
+      <div class="links">
+        <a matTooltip="Linkedin Profile" [href]="dataService.getLink('li')" target="_blank" class="li">
+          <img src="assets/images/about/li.png" />
+        </a>
+        <a matTooltip="Facebook Profile" [href]="dataService.getLink('fb')" target="_blank" class="fb">
+          <img src="assets/images/about/fb.png" />
+        </a>
+        <a matTooltip="ArtStation Profile" [href]="dataService.getLink('as')" target="_blank" class="as">
+          <img src="assets/images/about/as.png" />
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 </div>

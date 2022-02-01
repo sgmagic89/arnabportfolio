@@ -96,8 +96,13 @@
         }
 
         .aboutText {
-            margin: 50px;
+            margin: 45px 25px;
             padding-top: 50px;
+            .text {
+                p {
+                    text-align: left;
+                }
+            }
         }
     }
 }

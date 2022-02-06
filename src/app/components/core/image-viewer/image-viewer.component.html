@@ -1,13 +1,15 @@
 <div class="container">
   <div class="content">
-      <img [src]="imgPaths[index].src" />
+    <pinch-zoom [wheel]=false disableZoomControl="never">
+      <img [src]="imgPaths[index].path" />
+    </pinch-zoom>
   </div>
 </div>
 <div class="action prev">
-  <mat-icon *ngIf="imgPaths.length > 1" (click)="prev()">keyboard_arrow_left</mat-icon>
+  <mat-icon *ngIf="changeImage && imgPaths.length > 1" (click)="prev()">keyboard_arrow_left</mat-icon>
 </div>
 <div class="action next">
-  <mat-icon *ngIf="imgPaths.length > 1" (click)="next()">keyboard_arrow_right</mat-icon>
+  <mat-icon *ngIf="changeImage && imgPaths.length > 1" (click)="next()">keyboard_arrow_right</mat-icon>
 </div>
 <div class="close" (click)="dialogRef.close()">
   <mat-icon matTooltip="Back to gallery view">view_quilt</mat-icon>

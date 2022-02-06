@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
             document.getElementById('nav')?.classList.add('hide');
           if(window.innerWidth > 1000)
           {
-            document.getElementById('ham')!.style.display = 'block'
+            document.getElementById('ham')!.style.display = 'flex'
             document.getElementById('nav-items')?.classList.remove('show');
             document.getElementById('nav-items')?.classList.add('hide');
           }

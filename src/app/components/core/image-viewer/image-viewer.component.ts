@@ -13,6 +13,7 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
   index: any;
   imgPaths: any[] = [];
   subscription: Subscription = {} as Subscription;
+  changeImage = true;
   constructor(
     private router: Router,
     public dialogRef: MatDialogRef<ImageViewerComponent>,
@@ -20,6 +21,7 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
   ) {
     this.imgPaths = data.images;
     this.index = data.index;
+    this.changeImage = data.changeImage;
   }
 
   next() {
@@ -35,6 +37,7 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
       this.index = this.imgPaths.length-1;
     }
   }
+  
   ngOnInit() {
     this.subscription = this.router.events.subscribe((val) => {
       if(val instanceof NavigationStart) {

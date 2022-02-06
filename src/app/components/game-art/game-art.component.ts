@@ -5,6 +5,7 @@ import { fadeAnimation, slideAnimation } from 'src/app/animations/animations';
 import { DataService } from 'src/app/services/data.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { PreLoaderService } from 'src/app/services/pre-loader.service';
+import { ImageViewerComponent } from '../core/image-viewer/image-viewer.component';
 import { PasswordComponent } from './password/password.component';
 
 @Component({
@@ -63,6 +64,14 @@ export class GameArtComponent implements OnInit, OnDestroy {
         },1000)
       }
     })
+  }
+
+  open(index: any) {
+    this.dialog.open(ImageViewerComponent, {
+      width: '100%',
+      data: { images: this.preloadImages, index: index, changeImage: false },
+      panelClass: ['full-screen-modal']    
+    });
   }
 
   setCurrent() {

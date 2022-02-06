@@ -5,7 +5,8 @@
     justify-content: center;
     background-color: black;
     .content {
-        max-width: 80%;
+        max-width: 100%;
+        margin: auto;
         img {
             width: -webkit-fill-available;
         }
@@ -13,13 +14,6 @@
 }
 
 @media screen and (max-width: 1000px) {
-   .container {
-    .content {
-        max-width: 100%;
-        margin: auto;
-    } 
-   }
-
    .action.prev {
     left: 0px !important;
     }
@@ -31,10 +25,13 @@
 .action {
     position: fixed;
     top: 50%;
+    height: 50px;
+    border-radius: 5px;
     cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
     mat-icon {
-        height: 45px;
-        width: 45px;
+        height: 50px;
+        width: 50px;
         font-size: 50px;
         color: #B3B3B3;
     }
@@ -49,13 +46,16 @@
 
 .close {
     position: fixed;
-    top: 5px;
-    left: 30px;
+    top: 15px;
+    left: 15px;
+    height: 45px;
+    border-radius: 5px;
     cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
     mat-icon {
         height: 45px;
         width: 45px;
-        font-size: 40px;
+        font-size: 45px;
         color: #B3B3B3;
     }
 }

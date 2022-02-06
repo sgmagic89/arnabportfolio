@@ -21,7 +21,7 @@ export class HamburgerComponent implements OnInit {
   onResize(event: any) {
       this.view = false;
       if(window.innerWidth < 1000)
-      document.getElementById('ham')!.style.display = 'block'
+      document.getElementById('ham')!.style.display = 'flex'
       else if(location.href.includes('home'))
       document.getElementById('ham')!.style.display = 'none'
   }

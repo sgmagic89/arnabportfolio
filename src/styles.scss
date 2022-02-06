@@ -71,3 +71,19 @@ app-illustrations {
     width: 30px !important;
     background-size: 25px !important;
 }
+
+.full-screen-modal {
+    max-width: unset !important;
+    width: 100%;
+    height: 100%;
+    .mat-dialog-container {
+      max-width: 100vw;
+      max-height: 100vh;
+      height: 100%;
+      width: 100%;
+      padding: 0%;
+      .mat-dialog-content {
+        max-height: unset !important;
+      }
+    }
+  }

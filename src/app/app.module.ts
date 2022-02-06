@@ -20,6 +20,7 @@ import { PasswordComponent } from './components/game-art/password/password.compo
 import { SafePipe } from './pipes/safe.pipe';
 import { LoaderComponent } from './components/core/loader/loader.component';
 import { PreloaderComponent } from './components/core/preloader/preloader.component';
+import { ImageViewerComponent } from './components/core/image-viewer/image-viewer.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { PreloaderComponent } from './components/core/preloader/preloader.compon
     PasswordComponent,
     LoaderComponent,
     PreloaderComponent,
+    ImageViewerComponent,
     SafePipe
   ],
   imports: [

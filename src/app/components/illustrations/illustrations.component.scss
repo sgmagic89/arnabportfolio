@@ -46,7 +46,7 @@
 .open {
     position: absolute;
     top: 5px;
-    right: 10px;
+    left: 10px;
     height: 30px;
     text-align: center;
     vertical-align: flex;
@@ -62,6 +62,10 @@
         width: auto;
         opacity: 0.7;
     }
+}
+
+.open:nth-child(3) {
+    right: 35px;
 }
 
 .open:hover {

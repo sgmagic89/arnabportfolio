@@ -8,6 +8,8 @@ import { PreLoaderService } from 'src/app/services/pre-loader.service';
 import { Subscription } from 'rxjs';
 import { LoaderService } from 'src/app/services/loader.service';
 import fjGallery from 'flickr-justified-gallery';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { ImageViewerComponent } from '../core/image-viewer/image-viewer.component';
 
 @Component({
   selector: 'app-illustrations',
@@ -19,9 +21,11 @@ import fjGallery from 'flickr-justified-gallery';
 export class IllustrationsComponent implements AfterViewInit, OnDestroy {
   preLoadImages: any[] = [];
   images: any[] = [];
+  dialogRef!:MatDialogRef<ImageViewerComponent>;
   subscription: Subscription = <Subscription>{};
   constructor(private dataService: DataService, 
     private preLoader: PreLoaderService, 
+    public dialog: MatDialog,
     private loader: LoaderService,
     private cdr: ChangeDetectorRef) {
    
@@ -84,6 +88,14 @@ initGallery() {
   alignThumbnails: 'middle',
 });
   // inlineGallery.openGallery();
+}
+
+open(index: any) {
+  this.dialog.open(ImageViewerComponent, {
+    width: '100%',
+    data: { images: this.images, index: index },
+    panelClass: ['full-screen-modal']
+  });
 }
 
 ngOnDestroy(): void {

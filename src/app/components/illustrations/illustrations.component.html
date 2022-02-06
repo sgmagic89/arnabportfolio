@@ -2,10 +2,10 @@
 
 <div class="illustrations">
   <div id="inline-gallery-container" class="inline-gallery-container fj-gallery" id="justifiedgallery">
-    <div class="fj-gallery-item" *ngFor="let img of images">
+    <div class="fj-gallery-item" *ngFor="let img of images;let i = index">
       <pinch-zoom [wheel]=false disableZoomControl="never">
         <img class="gallery-item" [src]="img.src" />
-        <a [href]="img.src" class="open" target="_blank" matTooltip="View in new Tab"><mat-icon>open_in_new</mat-icon></a>
+        <span class="open" (click)="open(i)" matTooltip="View"><mat-icon>open_in_new</mat-icon></span>
       </pinch-zoom>
     </div>
   </div>

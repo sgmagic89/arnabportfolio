@@ -1,0 +1,58 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    .content {
+        max-width: 80%;
+        img {
+            width: -webkit-fill-available;
+        }
+    }
+}
+
+.action {
+    position: fixed;
+    top: 50%;
+    cursor: pointer;
+    mat-icon {
+        height: 45px;
+        width: 45px;
+        font-size: 50px;
+        color: #B3B3B3;
+    }
+}
+
+.action.prev {
+    left: 30px;
+}
+.action.next {
+    right: 30px;
+}
+
+.close {
+    position: fixed;
+    top: 5px;
+    left: 30px;
+    cursor: pointer;
+    mat-icon {
+        height: 45px;
+        width: 45px;
+        font-size: 40px;
+        color: #B3B3B3;
+    }
+}
+
+.close:hover {
+    mat-icon {
+        color: #ff8400;
+    }
+} 
+
+.action:hover {
+    mat-icon {
+        color: #ff8400;
+    }
+}
+
+

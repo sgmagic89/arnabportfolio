@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    document.addEventListener('contextmenu', event => event.preventDefault());
       this.router.events.subscribe((event) => {
         if (event instanceof NavigationEnd) {
           if (!event.url.includes('home') && event.url !== "/") {

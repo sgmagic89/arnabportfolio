@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { slideAnimation } from 'src/app/animations/animations';
 import { DataService } from 'src/app/services/data.service';
@@ -13,7 +13,7 @@ import { PreLoaderService } from 'src/app/services/pre-loader.service';
     slideAnimation
   ]
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, OnDestroy {
   animationStart = false;
   preLoadImages: any[] = [];
   subscription: Subscription = <Subscription>{};
@@ -35,6 +35,11 @@ export class AboutComponent implements OnInit {
           this.animationStart = true;
         },100);
       }});
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+    this.preLoader.reset();
   }
 
 }

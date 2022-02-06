@@ -23,17 +23,17 @@ export class ImageViewerComponent implements OnInit, OnDestroy {
   }
 
   next() {
-    if(this.index === this.imgPaths.length) {
+    this.index++;
+    if(this.index > this.imgPaths.length-1) {
       this.index = 0;
     }
-    this.index++;
   }
 
   prev() {
-    if(this.index === 0) {
+    this.index--;
+    if(this.index < 0) {
       this.index = this.imgPaths.length-1;
     }
-    this.index--;
   }
   ngOnInit() {
     this.subscription = this.router.events.subscribe((val) => {

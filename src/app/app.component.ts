@@ -9,10 +9,12 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent implements OnInit {
   nav = true;
-  constructor(private router: Router, private dataService: DataService) {
+  images: any[] = [];
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
+    
     document.addEventListener('contextmenu', event => event.preventDefault());
       this.router.events.subscribe((event) => {
         if (event instanceof NavigationEnd) {
@@ -34,15 +36,7 @@ export class AppComponent implements OnInit {
             }
           }
         }
-      })
-      this.dataService.getHomeImages();
-      this.dataService.getAnimations();
-      this.dataService.getGameArts();
-      this.dataService.getIllustrations();
-      this.dataService.getMiscellaneousCategories().forEach(cat => {
-        this.dataService.getMiscellaneousProjects(cat);
       });
-      this.dataService.getProfile();
   }
 
 }

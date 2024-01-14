@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   nav = true;
-  constructor(private router: Router) {
+  constructor(private router: Router, private dataService: DataService) {
   }
 
   ngOnInit(): void {
@@ -34,6 +35,14 @@ export class AppComponent implements OnInit {
           }
         }
       })
+      this.dataService.getHomeImages();
+      this.dataService.getAnimations();
+      this.dataService.getGameArts();
+      this.dataService.getIllustrations();
+      this.dataService.getMiscellaneousCategories().forEach(cat => {
+        this.dataService.getMiscellaneousProjects(cat);
+      });
+      this.dataService.getProfile();
   }
 
 }

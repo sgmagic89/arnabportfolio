@@ -1,27 +1,23 @@
-# Portfolio
-
+# arnabdeart.com
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
-## Development server
+## Pre-Requisites
+1. Install NodeJS (Latest) - https://nodejs.org/en/download/package-manager/current
+2. Install Angular - npm install -g @angular/cli
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## How to run the application in local machine? [All below are commands you can use any cli(cmd, gitbash, powershell etc.) to execute them]
+1. git clone https://github.com/sgmagic89/arnabportfolio.git
+2. npm install --force
+3. npm start
+4. Application should be up and running on http://localhost:4200
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## How to Add/Edit/Delete artifacts?
+1. Add/Replace/Delete image in this path src\assets\
+2. Update src\assets\site.data.json to tell the application what you have changed. This file is the main info file of the application.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## How to build the project and deploy?
+1. npm run build
+2. Copy the content of dist folder to your server www folder and application should be live
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

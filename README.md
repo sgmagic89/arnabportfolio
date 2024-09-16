@@ -2,11 +2,11 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
 ## Pre-Requisites
-1. Install NodeJS (Latest) - https://nodejs.org/en/download/package-manager/current
-2. Install Angular - npm install -g @angular/cli
+1. Download and Install NodeJS (Latest) - https://nodejs.org/en/download/package-manager/current
+2. Install Angular Command - npm install -g @angular/cli
 
 
-## How to run the application in local machine? [All below are commands you can use any cli(cmd, gitbash, powershell etc.) to execute them]
+## How to run the application in local machine?
 1. git clone https://github.com/sgmagic89/arnabportfolio.git
 2. npm install --force
 3. npm start

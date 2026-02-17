@@ -59,9 +59,11 @@ getAboutText() {
   Object.keys(this.siteData.about.text).forEach(key => {
     let txt: string = this.siteData.about.text[key];
     if (years !== null) {
-      // replace occurrences like "over 23 years" or "23 years" with the computed value
+      // Replace only explicit experience phrases like "over 23 years"
+      // Avoid replacing unrelated durations such as "3 years diploma".
       txt = txt.replace(/over\s+\d+\s+years/gi, `over ${years} years`);
-      txt = txt.replace(/\b\d+\s+years\b/gi, `${years} years`);
+      // If you later want to support other patterns (e.g. "for \d+ years"), add
+      // additional targeted regexes rather than a blanket replacement.
     }
     paras.push(txt);
   });

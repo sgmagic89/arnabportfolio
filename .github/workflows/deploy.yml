@@ -18,7 +18,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          # Firebase CLI v15 requires Node >=20
+          node-version: '24'
 
       - name: Allow legacy peer deps for npm (fixes ERESOLVE issues)
         run: npm config set legacy-peer-deps true
@@ -30,7 +31,7 @@ jobs:
         run: npm run build -- --configuration production
 
       - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.4.0
+        uses: SamKirkland/FTP-Deploy-Action@v4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -67,8 +68,33 @@ jobs:
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
 
+      - name: Prepare Firebase credentials (service account or token)
+        env:
+          SA_SECRET: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARNABPORTFOLIO_80E5E || '' }}
+        run: |
+          # If a service account JSON was stored in the secret (raw JSON or base64),
+          # create a file and set GOOGLE_APPLICATION_CREDENTIALS so firebase-tools uses it.
+          if [ -n "$SA_SECRET" ]; then
+            echo "$SA_SECRET" > sa.tmp
+            # If it looks like JSON, use it directly. Otherwise try base64 decode, falling back to raw.
+            if grep -q '"type"' sa.tmp; then
+              mv sa.tmp firebase-sa.json
+            else
+              echo "$SA_SECRET" | base64 --decode > firebase-sa.json 2>/dev/null || mv sa.tmp firebase-sa.json
+            fi
+            echo "GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/firebase-sa.json" >> $GITHUB_ENV
+            echo "Prepared service account credentials"
+          else
+            echo "No service account secret found. Will rely on FIREBASE_TOKEN if provided."
+          fi
+
       - name: Deploy to Firebase Hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
-          firebase deploy --only hosting --token "$FIREBASE_TOKEN"
+          if [ -n "$FIREBASE_TOKEN" ]; then
+            firebase deploy --only hosting --token "$FIREBASE_TOKEN"
+          else
+            # If no token, firebase-tools will use GOOGLE_APPLICATION_CREDENTIALS set above
+            firebase deploy --only hosting
+          fi

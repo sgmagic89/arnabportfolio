@@ -18,6 +18,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 
 ## How to build the project and deploy?
-1. npm run build
-2. Copy the content of dist folder to your server www folder and application should be live
+1. Push changes in development branch to deploy in demo site https://arnabportfolio-80e5e.web.app verify changes there if everything looks good
+2. Go live by merging development branch with main branch and the changes should reflect once build passes in https://arnabdeart.com/
 

@@ -19,7 +19,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           # Firebase CLI v15 requires Node >=20
-          node-version: '24'
+            node-version: '24'
+
+        - name: Check Node / npm versions
+          run: |
+            node -v
+            npm -v
 
       - name: Allow legacy peer deps for npm (fixes ERESOLVE issues)
         run: npm config set legacy-peer-deps true
@@ -54,7 +59,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '16'
+            node-version: '24'
+
+        - name: Check Node / npm versions
+          run: |
+            node -v
+            npm -v
 
       - name: Allow legacy peer deps for npm (fixes ERESOLVE issues)
         run: npm config set legacy-peer-deps true

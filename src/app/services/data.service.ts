@@ -51,8 +51,19 @@ getMiscellaneousProjects(categoryName: string) {
 
 getAboutText() {
   const paras: string[]= [];
+  // compute dynamic years of experience if careerStartYear is provided
+  const startYear = this.siteData.about && this.siteData.about.careerStartYear ? Number(this.siteData.about.careerStartYear) : null;
+  const now = new Date();
+  const years = startYear ? (now.getFullYear() - startYear) : null;
+
   Object.keys(this.siteData.about.text).forEach(key => {
-    paras.push(this.siteData.about.text[key]);
+    let txt: string = this.siteData.about.text[key];
+    if (years !== null) {
+      // replace occurrences like "over 23 years" or "23 years" with the computed value
+      txt = txt.replace(/over\s+\d+\s+years/gi, `over ${years} years`);
+      txt = txt.replace(/\b\d+\s+years\b/gi, `${years} years`);
+    }
+    paras.push(txt);
   });
   return paras;
 }

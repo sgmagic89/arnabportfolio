@@ -183,6 +183,39 @@
                 { "name": "Star Light 7s_PayTable Eart.jpg" },
                 { "name": "Star Light 7s_GameScreen.jpg" }
             ]
+        },
+        "game15": {
+            "name": "Pharaoh's Last Wish",
+            "images": [
+                { "name": "PLW_01.jpg" },
+                { "name": "PLW_02.jpg" },
+                { "name": "PLW_03.jpg" },
+                { "name": "PLW_04.jpg" },
+                { "name": "PLW_05.jpg" },
+                { "name": "PLW_06.jpg" },
+                { "name": "PLW_07.jpg" },
+                { "name": "https://www.youtube.com/embed/pn4nw03hZz8" },
+                { "name": "https://www.youtube.com/embed/LGummIom5f0" }
+            ]
+        },
+        "game16": {
+            "name": "Red Hot Multipliers",
+            "images": [
+                { "name": "RHM_01.jpg" },
+                { "name": "RHM_02.jpg" },
+                { "name": "RHM_03.jpg" },
+                { "name": "https://www.youtube.com/embed/e73inC0EYVY" }
+            ]
+        },
+        "game17": {
+            "name": "Diamonds 4 The Win",
+            "images": [
+                { "name": "D4TW_01.jpg" },
+                { "name": "D4TW_02.jpg" },
+                { "name": "D4TW_03.jpg" },
+                { "name": "D4TW_04.jpg" },
+                { "name": "https://www.youtube.com/embed/LmwNeyo96vA" }
+            ]
         }
     },
     "animations": {
@@ -243,6 +276,7 @@
         ]
     },
     "about": {
+        "careerStartYear": 1999,
         "text": {
             "p1": "My artistic family background has influenced me immensely while growing up. I started drawing and painting naturally at a very young age, for as long as I can remember. My passion for drawing and painting had eventually landed me at Zed Institute of Creative Arts to attend a 3 years diploma in Animation Film Designing program. This was after I completed a Bachelor’s degree in Science from University of Calcutta.",
             "p2": "During my tenure in Gaming and Animation industry for over 23 years, I worked with reputed organizations from USA, India and Europe in different capacities. I lived in Las Vegas and had been associated with Konami Gaming Inc., for over a decade as a consultant and delivered game-art and graphics for many slot gaming titles. Besides that, I did art directions for many online games from NetEnt and SpinPlay Games.",

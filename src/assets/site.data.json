@@ -111,6 +111,20 @@
                 { "name": "https://www.youtube.com/embed/lYd7G2VfRMw" }
             ]
         },
+        "game15": {
+            "name": "Pharaoh's Last Wish",
+            "images": [
+                { "name": "PLW_01.jpg" },
+                { "name": "PLW_02.jpg" },
+                { "name": "PLW_03.jpg" },
+                { "name": "PLW_04.jpg" },
+                { "name": "PLW_05.jpg" },
+                { "name": "PLW_06.jpg" },
+                { "name": "PLW_07.jpg" },
+                { "name": "https://www.youtube.com/embed/pn4nw03hZz8" },
+                { "name": "https://www.youtube.com/embed/LGummIom5f0" }
+            ]
+        },
         "game6": {
             "name": "Radiant Arrow",
             "images": [
@@ -154,6 +168,13 @@
                 { "name": "https://www.youtube.com/embed/03AjsC9aNwA"}
             ]
         },
+         "game14": {
+            "name": "Star Light 7s",
+            "images": [
+                { "name": "Star Light 7s_PayTable Eart.jpg" },
+                { "name": "Star Light 7s_GameScreen.jpg" }
+            ]
+        },
         "game11": {
             "name": "Imperial Legends",
             "images": [
@@ -177,25 +198,34 @@
                 { "name": "Safari Storm Inferno_Free Game.jpg"}
             ]
         },
-        "game14": {
-            "name": "Star Light 7s",
+        "game20": {
+            "name": "Wrath & Roses",
             "images": [
-                { "name": "Star Light 7s_PayTable Eart.jpg" },
-                { "name": "Star Light 7s_GameScreen.jpg" }
+                { "name": "Wrath & Roses_01.jpg" },
+                { "name": "Wrath & Roses_02.jpg" },
+                { "name": "Wrath & Roses_03.jpg" },
+                { "name": "Wrath & Roses_04.jpg" },
+                { "name": "https://www.youtube.com/embed/I-47izEYC90" }
             ]
         },
-        "game15": {
-            "name": "Pharaoh's Last Wish",
+        "game18": {
+            "name": "Amazonia Secrets",
             "images": [
-                { "name": "PLW_01.jpg" },
-                { "name": "PLW_02.jpg" },
-                { "name": "PLW_03.jpg" },
-                { "name": "PLW_04.jpg" },
-                { "name": "PLW_05.jpg" },
-                { "name": "PLW_06.jpg" },
-                { "name": "PLW_07.jpg" },
-                { "name": "https://www.youtube.com/embed/pn4nw03hZz8" },
-                { "name": "https://www.youtube.com/embed/LGummIom5f0" }
+                { "name": "Amazonia Secrets_01.jpg" },
+                { "name": "Amazonia Secrets_02.jpg" },
+                { "name": "Amazonia Secrets_03.jpg" },
+                { "name": "Amazonia Secrets_04.jpg" },
+                { "name": "https://www.youtube.com/embed/zPG7vc30qOU" }
+            ]
+        },
+        "game19": {
+            "name": "Realm of Deity",
+            "images": [
+                { "name": "Realm of Deity_01.jpg" },
+                { "name": "Realm of Deity_02.jpg" },
+                { "name": "Realm of Deity_03.jpg" },
+                { "name": "Realm of Deity_04.jpg" },
+                { "name": "https://www.youtube.com/embed/kUATPZPDnHc" }
             ]
         },
         "game16": {
@@ -217,6 +247,9 @@
                 { "name": "https://www.youtube.com/embed/LmwNeyo96vA" }
             ]
         }
+    },
+    "exclude": {
+        "gamearts": ["game12"]
     },
     "animations": {
         "animation1": {

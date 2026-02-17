@@ -28,7 +28,17 @@ getIllustrations() {
 }
 
 getGameArts() {
-  return this.siteData['gamearts'];
+  const all = this.siteData['gamearts'] || {};
+  const excludeList: string[] = (this.siteData['exclude'] && Array.isArray(this.siteData['exclude'].gamearts)) ? this.siteData['exclude'].gamearts : [];
+  if (!excludeList.length) return all;
+  // Return a shallow copy with excluded keys removed so callers don't need to filter themselves
+  const filtered: any = {};
+  Object.keys(all).forEach(key => {
+    if (!excludeList.includes(key)) {
+      filtered[key] = all[key];
+    }
+  });
+  return filtered;
 }
 
 getAnimations() {

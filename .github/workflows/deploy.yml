@@ -18,13 +18,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          # Firebase CLI v15 requires Node >=20
-            node-version: '24'
+          node-version: '24'
 
-        - name: Check Node / npm versions
-          run: |
-            node -v
-            npm -v
+      - name: Check Node / npm versions
+        run: |
+          node -v
+          npm -v
 
       - name: Allow legacy peer deps for npm (fixes ERESOLVE issues)
         run: npm config set legacy-peer-deps true
@@ -59,12 +58,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-            node-version: '24'
+          node-version: '24'
 
-        - name: Check Node / npm versions
-          run: |
-            node -v
-            npm -v
+      - name: Check Node / npm versions
+        run: |
+          node -v
+          npm -v
 
       - name: Allow legacy peer deps for npm (fixes ERESOLVE issues)
         run: npm config set legacy-peer-deps true
@@ -74,9 +73,6 @@ jobs:
 
       - name: Build (development)
         run: npm run build -- --configuration development
-
-      - name: Install Firebase CLI
-        run: npm install -g firebase-tools
 
       - name: Prepare Firebase credentials (service account or token)
         env:
@@ -98,13 +94,13 @@ jobs:
             echo "No service account secret found. Will rely on FIREBASE_TOKEN if provided."
           fi
 
-      - name: Deploy to Firebase Hosting
+      - name: Deploy to Firebase Hosting (via npx)
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
           if [ -n "$FIREBASE_TOKEN" ]; then
-            firebase deploy --only hosting --token "$FIREBASE_TOKEN"
+            npx --yes firebase-tools@latest deploy --only hosting --token "$FIREBASE_TOKEN"
           else
             # If no token, firebase-tools will use GOOGLE_APPLICATION_CREDENTIALS set above
-            firebase deploy --only hosting
+            npx --yes firebase-tools@latest deploy --only hosting
           fi

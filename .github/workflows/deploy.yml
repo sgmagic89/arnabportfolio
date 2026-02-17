@@ -34,18 +34,21 @@ jobs:
       - name: Build (production)
         run: npm run build -- --configuration production
 
-      - name: Deploy to FTP
-        uses: SamKirkland/ftp-deploy-action@v4
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
-          local-dir: ./dist
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
-          protocol: ftp
-          # enable deletion of remote files not present locally (optional):
-          delete: true
+      - name: Deploy to FTP (using lftp)
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+          FTP_REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          echo "Installing lftp"
+          sudo apt-get update -y
+          sudo apt-get install -y lftp
+          echo "Uploading ./dist to ftp://${FTP_HOST}:${FTP_PORT}${FTP_REMOTE_DIR}"
+          # Use lftp mirror to upload and delete remote files not present locally
+          lftp -u "${FTP_USERNAME}","${FTP_PASSWORD}" -p "${FTP_PORT}" "${FTP_HOST}" -e "set ftp:ssl-allow no; mirror -R --parallel=4 --verbose --delete ./dist \"${FTP_REMOTE_DIR}\"; quit"
 
   firebase_deploy:
     name: Build and deploy to Firebase (development)

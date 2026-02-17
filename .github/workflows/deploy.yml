@@ -94,6 +94,19 @@ jobs:
             echo "No service account secret found. Will rely on FIREBASE_TOKEN if provided."
           fi
 
+      - name: Debug service account (safe)
+        run: |
+          echo "--- Debug: GOOGLE_APPLICATION_CREDENTIALS ---"
+          # show variable and file existence (do not print secret contents)
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS"
+          if [ -n "$GOOGLE_APPLICATION_CREDENTIALS" ] && [ -f "$GOOGLE_APPLICATION_CREDENTIALS" ]; then
+            ls -l "$GOOGLE_APPLICATION_CREDENTIALS"
+            echo "First line of credential file (for validation):"
+            head -n 1 "$GOOGLE_APPLICATION_CREDENTIALS" | sed -n '1p'
+          else
+            echo "No credential file found at $GOOGLE_APPLICATION_CREDENTIALS"
+          fi
+
       - name: Deploy to Firebase Hosting (via npx)
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

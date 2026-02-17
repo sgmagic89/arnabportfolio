@@ -4,7 +4,7 @@
   <div id="inline-gallery-container" class="inline-gallery-container fj-gallery" id="justifiedgallery">
     <div class="fj-gallery-item" *ngFor="let img of images;let i = index">
       <pinch-zoom [wheel]=false disableZoomControl="never">
-        <img class="gallery-item" [src]="img.src" />
+  <img class="gallery-item" [src]="img.src" loading="lazy" decoding="async" style="opacity:0;transition:opacity .35s;display:block;max-width:100%;height:auto;" onload="this.style.opacity=1" />
         <span class="open" (click)="open(i)" matTooltip="View"><mat-icon>open_in_new</mat-icon></span>
       </pinch-zoom>
     </div>

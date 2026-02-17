@@ -9,7 +9,7 @@
   <div [@slide]="animationStart" class="content">
     <ng-container *ngFor="let game of current?.images; let i = index">
       <a *ngIf="!game.name.includes('http')" (click)="open(i)">
-        <img src="{{game.path}}" />
+        <img src="{{game.path}}" alt="{{game.name}}" loading="lazy" decoding="async" style="opacity:0;transition:opacity .35s;display:block;max-width:100%;height:auto;" onload="this.style.opacity=1" />
       </a>
       <iframe *ngIf="game.name.includes('http')" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen [src]="game.name | safe">
       </iframe>

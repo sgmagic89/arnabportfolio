@@ -1,7 +1,7 @@
 <div class="container">
   <div class="content">
     <pinch-zoom [wheel]=false disableZoomControl="never">
-      <img [src]="imgPaths[index].path" />
+  <img [src]="imgPaths[index].path" loading="lazy" decoding="async" style="opacity:0;transition:opacity .35s;display:block;" onload="this.style.opacity=1" />
     </pinch-zoom>
   </div>
 </div>

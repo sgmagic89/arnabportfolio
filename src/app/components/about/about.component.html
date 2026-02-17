@@ -2,7 +2,7 @@
 
 <div [@slide]="animationStart" class="about">
 <div class="image">
-<img src="assets/images/about/arnab.png" />
+<img src="assets/images/about/arnab.png" loading="lazy" decoding="async" style="opacity:0;transition:opacity .25s;display:block;max-width:100%;height:auto;" onload="this.style.opacity=1" />
 </div>
 <div class="aboutText">
   <div class="text">
@@ -20,13 +20,13 @@
       </div>
       <div class="links">
         <a matTooltip="Linkedin Profile" [href]="dataService.getLink('li')" target="_blank" class="li">
-          <img src="assets/images/about/li.png" />
+          <img src="assets/images/about/li.png" loading="lazy" decoding="async" style="opacity:0;transition:opacity .25s;" onload="this.style.opacity=1" />
         </a>
         <a matTooltip="Facebook Profile" [href]="dataService.getLink('fb')" target="_blank" class="fb">
-          <img src="assets/images/about/fb.png" />
+          <img src="assets/images/about/fb.png" loading="lazy" decoding="async" style="opacity:0;transition:opacity .25s;" onload="this.style.opacity=1" />
         </a>
         <a matTooltip="ArtStation Profile" [href]="dataService.getLink('as')" target="_blank" class="as">
-          <img src="assets/images/about/as.png" />
+          <img src="assets/images/about/as.png" loading="lazy" decoding="async" style="opacity:0;transition:opacity .25s;" onload="this.style.opacity=1" />
         </a>
       </div>
     </div>

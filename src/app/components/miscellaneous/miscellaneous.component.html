@@ -9,9 +9,9 @@
   <div [@slide]="animationStart" class="content">
     <ng-container *ngFor="let project of currentProjects">
       <span class="projectHeader">{{ project.name }}</span>
-      <ng-container *ngFor="let image of project.images">
-       <img [src]="image.path" />
-      </ng-container>
+  <ng-container *ngFor="let image of project.images">
+   <img [src]="image.path" loading="lazy" decoding="async" style="opacity:0;transition:opacity .35s;display:block;max-width:100%;height:auto;" onload="this.style.opacity=1" />
+  </ng-container>
       <mat-divider></mat-divider>
     </ng-container>
   </div>

@@ -20,6 +20,9 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Allow legacy peer deps for npm (fixes ERESOLVE issues)
+        run: npm config set legacy-peer-deps true
+
       - name: Install dependencies
         run: npm ci
 
@@ -51,6 +54,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '16'
+
+      - name: Allow legacy peer deps for npm (fixes ERESOLVE issues)
+        run: npm config set legacy-peer-deps true
 
       - name: Install dependencies
         run: npm ci

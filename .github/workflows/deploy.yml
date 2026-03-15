@@ -4,12 +4,10 @@ on:
   push:
     branches:
       - main
-      - development
 
 jobs:
   ftp_deploy:
     name: Build and deploy to FTP (main)
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -49,74 +47,3 @@ jobs:
           echo "Uploading ./dist to ftp://${FTP_HOST}:${FTP_PORT}${FTP_REMOTE_DIR}"
           # Use lftp mirror to upload and delete remote files not present locally
           lftp -u "${FTP_USERNAME}","${FTP_PASSWORD}" -p "${FTP_PORT}" "${FTP_HOST}" -e "set ftp:ssl-allow no; mirror -R --parallel=4 --verbose --delete ./dist \"${FTP_REMOTE_DIR}\"; quit"
-
-  firebase_deploy:
-    name: Build and deploy to Firebase (development)
-    if: github.ref == 'refs/heads/development'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-
-      - name: Check Node / npm versions
-        run: |
-          node -v
-          npm -v
-
-      - name: Allow legacy peer deps for npm (fixes ERESOLVE issues)
-        run: npm config set legacy-peer-deps true
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build (development)
-        run: npm run build -- --configuration development
-
-      - name: Prepare Firebase credentials (service account or token)
-        env:
-          SA_SECRET: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARNABPORTFOLIO_80E5E || '' }}
-        run: |
-          # If a service account JSON was stored in the secret (raw JSON or base64),
-          # create a file and set GOOGLE_APPLICATION_CREDENTIALS so firebase-tools uses it.
-          if [ -n "$SA_SECRET" ]; then
-            echo "$SA_SECRET" > sa.tmp
-            # If it looks like JSON, use it directly. Otherwise try base64 decode, falling back to raw.
-            if grep -q '"type"' sa.tmp; then
-              mv sa.tmp firebase-sa.json
-            else
-              echo "$SA_SECRET" | base64 --decode > firebase-sa.json 2>/dev/null || mv sa.tmp firebase-sa.json
-            fi
-            echo "GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/firebase-sa.json" >> $GITHUB_ENV
-            echo "Prepared service account credentials"
-          else
-            echo "No service account secret found. Will rely on FIREBASE_TOKEN if provided."
-          fi
-
-      - name: Debug service account (safe)
-        run: |
-          echo "--- Debug: GOOGLE_APPLICATION_CREDENTIALS ---"
-          # show variable and file existence (do not print secret contents)
-          echo "GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS"
-          if [ -n "$GOOGLE_APPLICATION_CREDENTIALS" ] && [ -f "$GOOGLE_APPLICATION_CREDENTIALS" ]; then
-            ls -l "$GOOGLE_APPLICATION_CREDENTIALS"
-            echo "First line of credential file (for validation):"
-            head -n 1 "$GOOGLE_APPLICATION_CREDENTIALS" | sed -n '1p'
-          else
-            echo "No credential file found at $GOOGLE_APPLICATION_CREDENTIALS"
-          fi
-
-      - name: Deploy to Firebase Hosting (via npx)
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: |
-          if [ -n "$FIREBASE_TOKEN" ]; then
-            npx --yes firebase-tools@latest deploy --only hosting --token "$FIREBASE_TOKEN"
-          else
-            # If no token, firebase-tools will use GOOGLE_APPLICATION_CREDENTIALS set above
-            npx --yes firebase-tools@latest deploy --only hosting
-          fi

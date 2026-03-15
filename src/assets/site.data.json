@@ -249,7 +249,7 @@
         }
     },
     "exclude": {
-        "gamearts": ["game12"]
+        "gamearts": ["game12", "game7"]
     },
     "animations": {
         "animation1": {
